@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereal Balance | Premium Wellness Events & Corporate Partnerships</title>
+    <link rel="icon" href="assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -84,12 +85,23 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             font-weight: 500;
             color: var(--charcoal);
             text-decoration: none;
             letter-spacing: 0.05em;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(45, 45, 45, 0.15);
         }
 
         .logo span {
@@ -1433,6 +1445,9 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .gallery-image::before {
@@ -1627,6 +1642,11 @@
             background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
             aspect-ratio: 4/3;
             width: 800px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
         }
 
         .lightbox-nav {
@@ -1682,6 +1702,9 @@
             font-size: 0.7rem;
             color: white;
             flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .lightbox-thumb:hover {
@@ -1805,7 +1828,10 @@
 <body>
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#" class="logo">Ethereal <span>Balance</span></a>
+        <a href="#" class="logo">
+            <img class="logo-mark" src="assets/logo-circle.png" alt="Ethereal Balance logo">
+            Ethereal <span>Balance</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#events">Events</a></li>
@@ -1839,17 +1865,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-eyebrow">Premium Wellness Experiences</div>
-                <h1>Elevate Your <em>Wellness</em> Journey</h1>
-                <p class="hero-description">
-                    Transformative Pilates events and wellness experiences for corporations, hotels, and communities. We bring people together through mindful movement and holistic well-being.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#events" class="btn btn-primary">Explore Events →</a>
-                    <a href="#contact" class="btn btn-secondary">Partner With Us</a>
-                </div>
-            </div>
+            <div class="hero-content"></div>
         </div>
         <div class="hero-visual">
             <div class="hero-image-placeholder">
@@ -1960,7 +1976,7 @@
                 <div class="events-sidebar">
                     <div class="filter-group">
                         <span class="filter-label">Event Type</span>
-                        <div class="filter-buttons">
+                        <div class="filter-buttons" data-filter-group="type">
                             <button class="filter-btn active" data-filter="all">All Events</button>
                             <button class="filter-btn" data-filter="community">Community</button>
                             <button class="filter-btn" data-filter="corporate">Corporate</button>
@@ -1969,7 +1985,7 @@
                     </div>
                     <div class="filter-group">
                         <span class="filter-label">Location</span>
-                        <div class="filter-buttons">
+                        <div class="filter-buttons" data-filter-group="location">
                             <button class="filter-btn active" data-filter="all">All Locations</button>
                             <button class="filter-btn" data-filter="downtown">Downtown</button>
                             <button class="filter-btn" data-filter="beach">Beachside</button>
@@ -1977,151 +1993,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="events-list">
-                    <!-- Event 1 -->
-                    <div class="event-card" data-type="community">
-                        <div class="event-date">
-                            <span class="month">Jan</span>
-                            <span class="day">18</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Community</span>
-                            <h3>Sunrise Flow at the Beach</h3>
-                            <div class="event-meta">
-                                <span>📍 Venice Beach Pavilion</span>
-                                <span>⏰ 7:00 AM - 8:30 AM</span>
-                            </div>
-                            <p class="event-description">Start your weekend with an energizing Pilates flow as the sun rises over the ocean.</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Sunrise Flow at the Beach', 'Jan 18, 2026')">Register</button>
-                                <span class="spots-left">12 spots left</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 2 -->
-                    <div class="event-card" data-type="corporate">
-                        <div class="event-date">
-                            <span class="month">Jan</span>
-                            <span class="day">24</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Corporate</span>
-                            <h3>Tech Company Wellness Day</h3>
-                            <div class="event-meta">
-                                <span>📍 Innovation Hub, DTLA</span>
-                                <span>⏰ 12:00 PM - 2:00 PM</span>
-                            </div>
-                            <p class="event-description">A rejuvenating midday break featuring mat Pilates, breathwork, and stress-relief techniques.</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Tech Company Wellness Day', 'Jan 24, 2026')">Register</button>
-                                <span class="spots-left">Private Event</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 3 -->
-                    <div class="event-card" data-type="retreat">
-                        <div class="event-date">
-                            <span class="month">Feb</span>
-                            <span class="day">7</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Retreat</span>
-                            <h3>Desert Wellness Weekend</h3>
-                            <div class="event-meta">
-                                <span>📍 Joshua Tree Resort</span>
-                                <span>⏰ 3-Day Retreat</span>
-                            </div>
-                            <p class="event-description">An immersive weekend of Pilates, meditation, sound healing, and connection under the desert stars.</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Desert Wellness Weekend', 'Feb 7-9, 2026')">Register</button>
-                                <span class="spots-left">8 spots left</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 4 -->
-                    <div class="event-card" data-type="community">
-                        <div class="event-date">
-                            <span class="month">Feb</span>
-                            <span class="day">14</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Community</span>
-                            <h3>Valentine's Partner Pilates</h3>
-                            <div class="event-meta">
-                                <span>📍 Ethereal Studio</span>
-                                <span>⏰ 6:00 PM - 8:00 PM</span>
-                            </div>
-                            <p class="event-description">A special evening of partner exercises, connection, and champagne. Bring your favorite person!</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Valentine\'s Partner Pilates', 'Feb 14, 2026')">Register</button>
-                                <span class="spots-left">20 spots left</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 5 -->
-                    <div class="event-card" data-type="corporate">
-                        <div class="event-date">
-                            <span class="month">Feb</span>
-                            <span class="day">21</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Corporate</span>
-                            <h3>Executive Retreat: The Ritz-Carlton</h3>
-                            <div class="event-meta">
-                                <span>📍 Ritz-Carlton Marina del Rey</span>
-                                <span>⏰ Full Day Program</span>
-                            </div>
-                            <p class="event-description">An exclusive wellness experience for leadership teams featuring private sessions, spa treatments, and mindfulness training.</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Executive Retreat', 'Feb 21, 2026')">Register</button>
-                                <span class="spots-left">Inquiry Required</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Event 6 -->
-                    <div class="event-card" data-type="community">
-                        <div class="event-date">
-                            <span class="month">Mar</span>
-                            <span class="day">1</span>
-                            <span class="year">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type">Community</span>
-                            <h3>Spring Renewal Workshop</h3>
-                            <div class="event-meta">
-                                <span>📍 Botanical Gardens</span>
-                                <span>⏰ 9:00 AM - 12:00 PM</span>
-                            </div>
-                            <p class="event-description">Welcome spring with an outdoor workshop combining Pilates, breathwork, and intention-setting surrounded by nature.</p>
-                        </div>
-                        <div class="event-action">
-                            <div>
-                                <button class="event-register-btn" onclick="openModal('Spring Renewal Workshop', 'Mar 1, 2026')">Register</button>
-                                <span class="spots-left">35 spots left</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="events-list" id="eventsList"></div>
             </div>
         </div>
     </section>
@@ -2140,86 +2012,6 @@
         <div class="gallery-carousel">
             <div class="gallery-track-wrapper">
                 <div class="gallery-track" id="galleryTrack">
-                    <div class="gallery-slide" onclick="openLightbox(0)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #C5D4B8 0%, #9CAF88 100%);">
-                            <span>Sunrise Beach Session</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Sunrise Flow @ Venice Beach</h4>
-                            <p>January 2025 • 45 Attendees</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(1)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #E8E2D9 0%, #C4907A 100%);">
-                            <span>Corporate Wellness Day</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Google LA Wellness Week</h4>
-                            <p>December 2024 • Corporate Partner</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(2)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #9CAF88 0%, #7A9167 100%);">
-                            <span>Desert Retreat</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Joshua Tree Wellness Weekend</h4>
-                            <p>November 2024 • 3-Day Retreat</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(3)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #C4907A 0%, #A87661 100%);">
-                            <span>Hotel Partnership Launch</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Four Seasons Beverly Hills</h4>
-                            <p>October 2024 • Hotel Partner</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(4)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #E5D4A0 0%, #C9A962 100%);">
-                            <span>Community Gathering</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Summer Solstice Celebration</h4>
-                            <p>June 2024 • 80+ Attendees</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(5)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #C5D4B8 0%, #E8E2D9 100%);">
-                            <span>Rooftop Session</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>DTLA Rooftop Series</h4>
-                            <p>September 2024 • Monthly Event</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(6)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #7A9167 0%, #9CAF88 100%);">
-                            <span>Wellness Workshop</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Breathwork & Movement</h4>
-                            <p>August 2024 • Workshop Series</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide" onclick="openLightbox(7)">
-                        <div class="gallery-image" style="background: linear-gradient(135deg, #A87661 0%, #C4907A 100%);">
-                            <span>Launch Event</span>
-                            <div class="view-gallery-icon">📷</div>
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>Ethereal Balance Launch</h4>
-                            <p>March 2024 • Where It All Began</p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="gallery-controls">
@@ -2435,7 +2227,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">Ethereal <span>Balance</span></a>
+                    <a href="#" class="logo">
+                        <img class="logo-mark" src="assets/logo-circle.png" alt="Ethereal Balance logo">
+                        Ethereal <span>Balance</span>
+                    </a>
                     <p>Transforming lives through mindful movement and community connection. Join us on the journey to balanced living.</p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/ethereal_balancee/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -2466,16 +2261,6 @@
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#partners">Partners</a></li>
                         <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -2543,6 +2328,7 @@
         </div>
     </div>
 
+    <script src="events.js"></script>
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
@@ -2561,23 +2347,97 @@
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
 
+        const eventsList = document.getElementById('eventsList');
+        const eventsData = window.eventsData || [];
+        let activeTypeFilter = 'all';
+        let activeLocationFilter = 'all';
+
+        function renderEvents() {
+            if (!eventsList) return;
+            eventsList.innerHTML = '';
+
+            if (!eventsData.length) {
+                eventsList.innerHTML = '<p class="event-description">New events are coming soon. Please check back for updates.</p>';
+                return;
+            }
+
+            eventsData.forEach((event) => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.dataset.type = event.type;
+                card.dataset.location = event.location;
+
+                card.innerHTML = `
+                    <div class="event-date">
+                        <span class="month">${event.date?.month || ''}</span>
+                        <span class="day">${event.date?.day || ''}</span>
+                        <span class="year">${event.date?.year || ''}</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-type">${event.typeLabel || ''}</span>
+                        <h3>${event.title || ''}</h3>
+                        <div class="event-meta">
+                            <span>📍 ${event.venue || ''}</span>
+                            <span>⏰ ${event.time || ''}</span>
+                        </div>
+                        <p class="event-description">${event.description || ''}</p>
+                    </div>
+                    <div class="event-action">
+                        <div>
+                            <button class="event-register-btn" type="button">Register</button>
+                            <span class="spots-left">${event.spots || ''}</span>
+                        </div>
+                    </div>
+                `;
+
+                card.querySelector('.event-register-btn').addEventListener('click', () => {
+                    openModal(event.modalTitle || event.title, event.modalDate || '');
+                });
+
+                eventsList.appendChild(card);
+            });
+
+            applyEventFilters();
+        }
+
+        function applyEventFilters() {
+            document.querySelectorAll('.event-card').forEach((card) => {
+                const matchesType = activeTypeFilter === 'all' || card.dataset.type === activeTypeFilter;
+                const matchesLocation = activeLocationFilter === 'all' || card.dataset.location === activeLocationFilter;
+                card.style.display = matchesType && matchesLocation ? '' : 'none';
+            });
+        }
+
         // Filter buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const parent = this.closest('.filter-buttons');
-                parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+        document.querySelectorAll('.filter-buttons').forEach((group) => {
+            group.addEventListener('click', (event) => {
+                const button = event.target.closest('.filter-btn');
+                if (!button) return;
+
+                group.querySelectorAll('.filter-btn').forEach((btn) => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.dataset.filter;
+                const groupName = group.dataset.filterGroup;
+                if (groupName === 'type') {
+                    activeTypeFilter = filterValue;
+                }
+                if (groupName === 'location') {
+                    activeLocationFilter = filterValue;
+                }
+
+                applyEventFilters();
             });
         });
 
         // ==================== GALLERY CAROUSEL ====================
+        const eventGalleries = window.pastEventsData || [];
         const galleryTrack = document.getElementById('galleryTrack');
         const galleryDots = document.getElementById('galleryDots');
         const prevBtn = document.getElementById('galleryPrev');
         const nextBtn = document.getElementById('galleryNext');
-        const slides = document.querySelectorAll('.gallery-slide');
-        const totalSlides = slides.length;
-        
+        let slides = [];
+        let totalSlides = 0;
         let currentIndex = 0;
         let slidesPerView = getSlidesPerView();
 
@@ -2595,6 +2455,7 @@
 
         function createDots() {
             galleryDots.innerHTML = '';
+            if (!totalSlides) return;
             const maxIndex = getMaxIndex();
             for (let i = 0; i <= maxIndex; i++) {
                 const dot = document.createElement('div');
@@ -2605,6 +2466,7 @@
         }
 
         function updateGallery() {
+            if (!totalSlides) return;
             const slideWidth = slides[0].offsetWidth;
             const gap = 30;
             const offset = currentIndex * (slideWidth + gap);
@@ -2618,6 +2480,38 @@
             // Update button states
             prevBtn.disabled = currentIndex === 0;
             nextBtn.disabled = currentIndex >= getMaxIndex();
+        }
+
+        function renderGallery() {
+            if (!galleryTrack) return;
+            galleryTrack.innerHTML = '';
+
+            eventGalleries.forEach((event, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'gallery-slide';
+                slide.addEventListener('click', () => openLightbox(index));
+
+                const coverLabel = event.coverLabel || event.title || '';
+                slide.innerHTML = `
+                    <div class="gallery-image" style="background-image: url('${event.coverImage || ''}');">
+                        ${coverLabel ? `<span>${coverLabel}</span>` : ''}
+                        <div class="view-gallery-icon">📷</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>${event.title || ''}</h4>
+                        <p>${event.date || ''}</p>
+                    </div>
+                `;
+
+                galleryTrack.appendChild(slide);
+            });
+
+            slides = Array.from(galleryTrack.querySelectorAll('.gallery-slide'));
+            totalSlides = slides.length;
+            slidesPerView = getSlidesPerView();
+            currentIndex = 0;
+            createDots();
+            updateGallery();
         }
 
         function moveGallery(direction) {
@@ -2644,8 +2538,7 @@
         });
 
         // Initialize gallery
-        createDots();
-        updateGallery();
+        renderGallery();
 
         // Touch/swipe support for gallery
         let touchStartX = 0;
@@ -2672,97 +2565,6 @@
         }
 
         // ==================== LIGHTBOX ====================
-        const eventGalleries = [
-            {
-                title: "Sunrise Flow @ Venice Beach",
-                date: "January 2025 • 45 Attendees",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #9CAF88 100%)", label: "Beach Setup" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #7A9167 100%)", label: "Morning Flow" },
-                    { gradient: "linear-gradient(135deg, #7A9167 0%, #C5D4B8 100%)", label: "Group Session" },
-                    { gradient: "linear-gradient(135deg, #E8E2D9 0%, #C5D4B8 100%)", label: "Sunrise Moment" },
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #E8E2D9 100%)", label: "Community" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #C5D4B8 100%)", label: "Final Pose" }
-                ]
-            },
-            {
-                title: "Google LA Wellness Week",
-                date: "December 2024 • Corporate Partner",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #E8E2D9 0%, #C4907A 100%)", label: "Office Setup" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #A87661 100%)", label: "Team Session" },
-                    { gradient: "linear-gradient(135deg, #A87661 0%, #E8E2D9 100%)", label: "Breathwork" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #E8E2D9 100%)", label: "Group Photo" }
-                ]
-            },
-            {
-                title: "Joshua Tree Wellness Weekend",
-                date: "November 2024 • 3-Day Retreat",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #7A9167 100%)", label: "Desert Arrival" },
-                    { gradient: "linear-gradient(135deg, #7A9167 0%, #9CAF88 100%)", label: "Morning Practice" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #9CAF88 100%)", label: "Sound Healing" },
-                    { gradient: "linear-gradient(135deg, #E5D4A0 0%, #7A9167 100%)", label: "Sunset Session" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #C5D4B8 100%)", label: "Star Gazing" }
-                ]
-            },
-            {
-                title: "Four Seasons Beverly Hills",
-                date: "October 2024 • Hotel Partner",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #A87661 100%)", label: "Luxury Setting" },
-                    { gradient: "linear-gradient(135deg, #A87661 0%, #C4907A 100%)", label: "Private Session" },
-                    { gradient: "linear-gradient(135deg, #E8E2D9 0%, #A87661 100%)", label: "Guest Experience" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #E8E2D9 100%)", label: "Partnership Launch" }
-                ]
-            },
-            {
-                title: "Summer Solstice Celebration",
-                date: "June 2024 • 80+ Attendees",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #E5D4A0 0%, #C9A962 100%)", label: "Golden Hour" },
-                    { gradient: "linear-gradient(135deg, #C9A962 0%, #E5D4A0 100%)", label: "Community Circle" },
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #E5D4A0 100%)", label: "Movement Flow" },
-                    { gradient: "linear-gradient(135deg, #E5D4A0 0%, #C4907A 100%)", label: "Celebration" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #E5D4A0 100%)", label: "Group Energy" },
-                    { gradient: "linear-gradient(135deg, #E5D4A0 0%, #9CAF88 100%)", label: "Sunset Close" }
-                ]
-            },
-            {
-                title: "DTLA Rooftop Series",
-                date: "September 2024 • Monthly Event",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #E8E2D9 100%)", label: "City Views" },
-                    { gradient: "linear-gradient(135deg, #E8E2D9 0%, #C5D4B8 100%)", label: "Rooftop Setup" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #E8E2D9 100%)", label: "Urban Wellness" },
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #9CAF88 100%)", label: "Skyline Session" }
-                ]
-            },
-            {
-                title: "Breathwork & Movement",
-                date: "August 2024 • Workshop Series",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #7A9167 0%, #9CAF88 100%)", label: "Workshop Intro" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #7A9167 100%)", label: "Breathwork Circle" },
-                    { gradient: "linear-gradient(135deg, #C5D4B8 0%, #7A9167 100%)", label: "Movement Flow" },
-                    { gradient: "linear-gradient(135deg, #7A9167 0%, #C5D4B8 100%)", label: "Integration" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #C5D4B8 100%)", label: "Closing Circle" }
-                ]
-            },
-            {
-                title: "Ethereal Balance Launch",
-                date: "March 2024 • Where It All Began",
-                photos: [
-                    { gradient: "linear-gradient(135deg, #A87661 0%, #C4907A 100%)", label: "The Beginning" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #A87661 100%)", label: "First Session" },
-                    { gradient: "linear-gradient(135deg, #E8E2D9 0%, #C4907A 100%)", label: "Founding Moment" },
-                    { gradient: "linear-gradient(135deg, #C4907A 0%, #9CAF88 100%)", label: "Community Forms" },
-                    { gradient: "linear-gradient(135deg, #9CAF88 0%, #C4907A 100%)", label: "Vision Realized" },
-                    { gradient: "linear-gradient(135deg, #A87661 0%, #E8E2D9 100%)", label: "Launch Day" }
-                ]
-            }
-        ];
-
         let currentEventIndex = 0;
         let currentPhotoIndex = 0;
 
@@ -2771,6 +2573,7 @@
             currentPhotoIndex = 0;
             
             const event = eventGalleries[eventIndex];
+            if (!event) return;
             document.getElementById('lightboxTitle').textContent = event.title;
             document.getElementById('lightboxDate').textContent = event.date;
             
@@ -2779,7 +2582,7 @@
             event.photos.forEach((photo, i) => {
                 const thumb = document.createElement('div');
                 thumb.className = 'lightbox-thumb' + (i === 0 ? ' active' : '');
-                thumb.style.background = photo.gradient;
+                thumb.style.backgroundImage = `url('${photo.src}')`;
                 thumb.onclick = () => goToPhoto(i);
                 thumbsContainer.appendChild(thumb);
             });
@@ -2797,11 +2600,12 @@
 
         function updateLightboxImage() {
             const event = eventGalleries[currentEventIndex];
+            if (!event) return;
             const photo = event.photos[currentPhotoIndex];
             
             const mainImage = document.getElementById('lightboxMainImage');
-            mainImage.style.background = photo.gradient;
-            mainImage.innerHTML = `<span>${photo.label}</span>`;
+            mainImage.style.backgroundImage = `url('${photo.src}')`;
+            mainImage.innerHTML = photo.label ? `<span>${photo.label}</span>` : '';
             
             document.getElementById('lightboxCounter').textContent = 
                 `${currentPhotoIndex + 1} / ${event.photos.length}`;
@@ -2813,6 +2617,7 @@
 
         function changeLightboxImage(direction) {
             const event = eventGalleries[currentEventIndex];
+            if (!event) return;
             currentPhotoIndex = (currentPhotoIndex + direction + event.photos.length) % event.photos.length;
             updateLightboxImage();
         }
@@ -2836,6 +2641,8 @@
                 if (e.key === 'ArrowRight') changeLightboxImage(1);
             }
         });
+
+        renderEvents();
 
         // Modal functions
         function openModal(eventName, eventDate) {
