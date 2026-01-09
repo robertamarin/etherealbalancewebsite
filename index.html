@@ -1825,7 +1825,6 @@
         }
 
         /* ==================== MOBILE PHONE OPTIMIZATIONS ==================== */
-        /* Small phones and standard mobile devices */
         @media (max-width: 576px) {
             /* Navigation */
             nav {
@@ -1909,7 +1908,7 @@
 
             /* Section Headers */
             .section-header {
-                margin-bottom: 40px;
+                margin-bottom: 32px;
             }
 
             .section-eyebrow {
@@ -1932,51 +1931,72 @@
                 line-height: 1.6;
             }
 
-            /* Services Section */
+            /* Services Section - Compact Cards */
             .services {
-                padding: 60px 0;
+                padding: 50px 0;
+            }
+
+            .services-grid {
+                gap: 16px;
             }
 
             .service-card {
-                padding: 32px 24px;
-                border-radius: 16px;
+                padding: 20px 18px;
+                border-radius: 14px;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .service-card::before {
+                height: 3px;
             }
 
             .service-icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 14px;
-                margin-bottom: 20px;
-                font-size: 1.5rem;
+                width: 48px;
+                height: 48px;
+                min-width: 48px;
+                border-radius: 12px;
+                margin-bottom: 0;
+                font-size: 1.3rem;
+            }
+
+            .service-card-content {
+                flex: 1;
             }
 
             .service-card h3 {
-                font-size: 1.4rem;
-                margin-bottom: 12px;
+                font-size: 1.15rem;
+                margin-bottom: 6px;
             }
 
             .service-card p {
-                font-size: 0.9rem;
-                margin-bottom: 16px;
-                line-height: 1.6;
+                font-size: 0.82rem;
+                margin-bottom: 10px;
+                line-height: 1.5;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
 
             .service-link {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
 
             /* Events Section */
             .events {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .events-sidebar {
                 gap: 16px;
-                margin-bottom: 24px;
+                margin-bottom: 20px;
             }
 
             .filter-group {
-                margin-bottom: 16px;
+                margin-bottom: 12px;
             }
 
             .filter-label {
@@ -1994,16 +2014,16 @@
             }
 
             .events-list {
-                gap: 16px;
+                gap: 14px;
             }
 
             .event-card {
-                border-radius: 16px;
+                border-radius: 14px;
             }
 
             .event-date {
-                padding: 16px;
-                gap: 12px;
+                padding: 14px;
+                gap: 10px;
             }
 
             .event-date .month {
@@ -2011,60 +2031,60 @@
             }
 
             .event-date .day {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .event-date .year {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .event-details {
-                padding: 20px;
+                padding: 16px;
             }
 
             .event-type {
                 padding: 4px 10px;
                 font-size: 0.65rem;
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
 
             .event-details h3 {
-                font-size: 1.2rem;
-                margin-bottom: 8px;
+                font-size: 1.1rem;
+                margin-bottom: 6px;
             }
 
             .event-meta {
                 flex-direction: column;
-                gap: 6px;
-                font-size: 0.8rem;
-                margin-bottom: 10px;
+                gap: 4px;
+                font-size: 0.78rem;
+                margin-bottom: 8px;
             }
 
             .event-description {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 line-height: 1.5;
             }
 
             .event-action {
-                padding: 0 20px 20px;
+                padding: 0 16px 16px;
             }
 
             .event-register-btn {
-                padding: 12px 20px;
+                padding: 10px 18px;
                 font-size: 0.75rem;
             }
 
             .spots-left {
-                font-size: 0.7rem;
+                font-size: 0.68rem;
             }
 
             /* Gallery Section */
             .gallery {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .gallery-carousel {
-                margin-top: 32px;
+                margin-top: 28px;
             }
 
             .gallery-track-wrapper {
@@ -2076,7 +2096,7 @@
             }
 
             .gallery-image {
-                border-radius: 16px;
+                border-radius: 14px;
                 aspect-ratio: 3/4;
             }
 
@@ -2093,13 +2113,13 @@
             }
 
             .gallery-controls {
-                margin-top: 24px;
+                margin-top: 20px;
                 gap: 12px;
             }
 
             .gallery-btn {
-                width: 44px;
-                height: 44px;
+                width: 42px;
+                height: 42px;
                 font-size: 1rem;
             }
 
@@ -2110,84 +2130,84 @@
 
             /* Partners Section */
             .partners {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .partners-marquee {
-                margin-top: 32px;
+                margin-top: 28px;
             }
 
             .partner-logo {
-                padding: 20px 30px;
-                min-width: 150px;
-                font-size: 1.1rem;
+                padding: 18px 28px;
+                min-width: 140px;
+                font-size: 1rem;
                 border-radius: 12px;
             }
 
             .partner-types {
-                gap: 20px;
-                margin-top: 40px;
+                gap: 16px;
+                margin-top: 36px;
             }
 
             .partner-type {
-                padding: 28px 20px;
-                border-radius: 16px;
+                padding: 24px 18px;
+                border-radius: 14px;
             }
 
             .partner-type h3 {
-                font-size: 1.2rem;
+                font-size: 1.15rem;
                 margin-bottom: 8px;
             }
 
             .partner-type p {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 line-height: 1.5;
             }
 
             /* About Section */
             .about {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .about-grid {
-                gap: 40px;
+                gap: 36px;
             }
 
             .about-image-main {
-                height: 350px;
-                border-radius: 20px;
+                height: 320px;
+                border-radius: 18px;
             }
 
             .about-image-accent {
-                width: 120px;
-                height: 120px;
+                width: 110px;
+                height: 110px;
                 right: 12px;
-                bottom: -15px;
-                padding: 16px;
+                bottom: -12px;
+                padding: 14px;
             }
 
             .about-image-accent span {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
             .about-image-accent small {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
 
             .about-content h2 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
+                font-size: 1.7rem;
+                margin-bottom: 18px;
             }
 
             .about-content p {
-                font-size: 0.9rem;
-                margin-bottom: 16px;
+                font-size: 0.88rem;
+                margin-bottom: 14px;
                 line-height: 1.6;
             }
 
             .about-features {
-                gap: 16px;
-                margin-top: 28px;
+                gap: 14px;
+                margin-top: 24px;
             }
 
             .about-feature {
@@ -2195,138 +2215,138 @@
             }
 
             .about-feature-icon {
-                width: 44px;
-                height: 44px;
+                width: 42px;
+                height: 42px;
                 border-radius: 10px;
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .about-feature h4 {
-                font-size: 0.95rem;
+                font-size: 0.92rem;
             }
 
             .about-feature p {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
             }
 
             /* Contact Section */
             .contact {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .contact-grid {
-                gap: 40px;
+                gap: 36px;
             }
 
             .contact-info h2 {
-                font-size: 1.8rem;
-                margin-bottom: 16px;
+                font-size: 1.7rem;
+                margin-bottom: 14px;
             }
 
             .contact-info > p {
-                font-size: 0.9rem;
-                margin-bottom: 28px;
+                font-size: 0.88rem;
+                margin-bottom: 24px;
                 line-height: 1.6;
             }
 
             .contact-methods {
-                gap: 16px;
-            }
-
-            .contact-method {
                 gap: 14px;
             }
 
+            .contact-method {
+                gap: 12px;
+            }
+
             .contact-method-icon {
-                width: 48px;
-                height: 48px;
+                width: 46px;
+                height: 46px;
                 border-radius: 12px;
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .contact-method-text h4 {
-                font-size: 0.95rem;
+                font-size: 0.92rem;
             }
 
             .contact-method-text p {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
             }
 
             .contact-form-wrapper {
-                padding: 28px 20px;
-                border-radius: 20px;
+                padding: 24px 18px;
+                border-radius: 18px;
             }
 
             .contact-form-wrapper h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .contact-form-wrapper > p {
-                font-size: 0.85rem;
-                margin-bottom: 24px;
+                font-size: 0.82rem;
+                margin-bottom: 20px;
             }
 
             .form-group {
-                margin-bottom: 18px;
+                margin-bottom: 16px;
             }
 
             .form-group label {
-                font-size: 0.8rem;
-                margin-bottom: 8px;
+                font-size: 0.78rem;
+                margin-bottom: 6px;
             }
 
             .form-group input,
             .form-group select,
             .form-group textarea {
-                padding: 14px 16px;
-                font-size: 0.9rem;
+                padding: 12px 14px;
+                font-size: 0.88rem;
                 border-radius: 10px;
             }
 
             .form-submit {
                 padding: 14px;
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 border-radius: 10px;
             }
 
             /* Footer */
             footer {
-                padding: 50px 0 30px;
+                padding: 44px 0 24px;
             }
 
             .footer-grid {
-                gap: 32px;
-                margin-bottom: 40px;
+                gap: 28px;
+                margin-bottom: 36px;
             }
 
             .footer-brand .logo {
-                font-size: 1.4rem;
-                margin-bottom: 16px;
+                font-size: 1.3rem;
+                margin-bottom: 14px;
             }
 
             .footer-brand p {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 line-height: 1.6;
             }
 
             .footer-social {
-                gap: 12px;
-                margin-top: 20px;
+                gap: 10px;
+                margin-top: 18px;
             }
 
             .footer-social a {
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
             }
 
             .footer-social a svg {
-                width: 18px;
-                height: 18px;
+                width: 16px;
+                height: 16px;
             }
 
             .footer-column h4 {
-                font-size: 0.85rem;
-                margin-bottom: 16px;
+                font-size: 0.82rem;
+                margin-bottom: 14px;
             }
 
             .footer-links li {
@@ -2334,60 +2354,60 @@
             }
 
             .footer-links a {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
             }
 
             .footer-bottom {
-                padding-top: 24px;
-                font-size: 0.8rem;
+                padding-top: 20px;
+                font-size: 0.75rem;
             }
 
             /* Modal */
             .modal {
-                border-radius: 20px;
-                width: 95%;
+                border-radius: 18px;
+                width: 94%;
                 max-height: 85vh;
             }
 
             .modal-header {
-                padding: 24px 20px 0;
+                padding: 20px 18px 0;
             }
 
             .modal-header h2 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .modal-close {
+                width: 36px;
+                height: 36px;
+                font-size: 1.2rem;
+            }
+
+            .modal-body {
+                padding: 20px 18px;
+            }
+
+            /* Lightbox */
+            .lightbox-header {
+                padding: 12px 14px;
+            }
+
+            .lightbox-header h3 {
+                font-size: 0.95rem;
+            }
+
+            .lightbox-header p {
+                font-size: 0.72rem;
+            }
+
+            .lightbox-close {
                 width: 38px;
                 height: 38px;
                 font-size: 1.3rem;
             }
 
-            .modal-body {
-                padding: 24px 20px;
-            }
-
-            /* Lightbox */
-            .lightbox-header {
-                padding: 12px 16px;
-            }
-
-            .lightbox-header h3 {
-                font-size: 1rem;
-            }
-
-            .lightbox-header p {
-                font-size: 0.75rem;
-            }
-
-            .lightbox-close {
-                width: 40px;
-                height: 40px;
-                font-size: 1.4rem;
-            }
-
             .lightbox-content {
-                padding: 0 12px;
+                padding: 0 10px;
             }
 
             .lightbox-main-image {
@@ -2397,9 +2417,9 @@
             }
 
             .lightbox-nav {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
+                width: 34px;
+                height: 34px;
+                font-size: 0.95rem;
             }
 
             .lightbox-prev {
@@ -2411,66 +2431,66 @@
             }
 
             .lightbox-counter {
-                font-size: 0.8rem;
-                margin-top: 12px;
+                font-size: 0.78rem;
+                margin-top: 10px;
             }
 
             .lightbox-thumbnails {
-                padding: 12px 16px 20px;
+                padding: 10px 14px 18px;
                 gap: 6px;
             }
 
             .lightbox-thumb {
-                width: 48px;
-                height: 48px;
+                width: 46px;
+                height: 46px;
                 border-radius: 8px;
                 border-width: 2px;
             }
 
             /* Mobile Menu */
             .mobile-menu {
-                padding: 80px 24px 24px;
+                padding: 70px 20px 20px;
                 max-width: 100%;
             }
 
             .mobile-menu-links li {
-                margin-bottom: 20px;
+                margin-bottom: 18px;
             }
 
             .mobile-menu-links a {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
             }
 
             .mobile-menu-close {
-                top: 20px;
-                right: 20px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
+                top: 18px;
+                right: 18px;
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
             }
 
             /* Success message */
             .success-message {
-                padding: 28px;
+                padding: 24px;
             }
 
             .success-message h3 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             .checkmark {
-                width: 64px;
-                height: 64px;
-                font-size: 2rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
 
-            /* Container padding */
+            /* Container */
             .container {
                 padding: 0 16px;
             }
         }
 
-        /* Extra small phones (iPhone SE, older devices) */
+        /* Extra small phones */
         @media (max-width: 375px) {
             .hero h1 {
                 font-size: 1.9rem;
@@ -2488,35 +2508,49 @@
                 font-size: 1.6rem;
             }
 
+            .service-card {
+                padding: 16px 14px;
+            }
+
+            .service-icon {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
             .service-card h3 {
-                font-size: 1.25rem;
+                font-size: 1.05rem;
+            }
+
+            .service-card p {
+                font-size: 0.78rem;
             }
 
             .event-details h3 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .about-content h2 {
-                font-size: 1.6rem;
-            }
-
-            .contact-info h2 {
-                font-size: 1.6rem;
-            }
-
-            .about-image-accent {
-                width: 100px;
-                height: 100px;
-            }
-
-            .about-image-accent span {
                 font-size: 1.5rem;
             }
 
+            .contact-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-image-accent {
+                width: 95px;
+                height: 95px;
+            }
+
+            .about-image-accent span {
+                font-size: 1.4rem;
+            }
+
             .partner-logo {
-                padding: 16px 24px;
-                min-width: 130px;
-                font-size: 1rem;
+                padding: 14px 20px;
+                min-width: 120px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -2871,7 +2905,7 @@
                             <div class="contact-method-icon">📧</div>
                             <div class="contact-method-text">
                                 <h4>Email Us</h4>
-                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb9e8f939e899e9a97999a979a95989e9ebb9c969a9297d5989496">[email&#160;protected]</a></p>
+                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a4f5e424f584f4b46484b464b44494f4f6a4d474b434604494547">[email&#160;protected]</a></p>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -2944,7 +2978,7 @@
                         <a href="https://www.tiktok.com/@etherealbalancee" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#2643524e435443474a44474a474845434366414b474f4a0845494b" aria-label="Email">
+                        <a href="/cdn-cgi/l/email-protection#5237263a372037333e30333e333c31373712353f333b3e7c313d3f" aria-label="Email">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         </a>
                     </div>
