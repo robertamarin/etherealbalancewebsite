@@ -1278,284 +1278,269 @@
         }
 
         @media (max-width: 768px) {
-            /* Mobile-specific optimizations for reduced scrolling */
+            /* ========== COMPREHENSIVE MOBILE REDESIGN ========== */
 
-            /* Reduce section padding on mobile */
-            .services {
-                padding: 80px 0 60px;
+            /* Global mobile spacing reduction */
+            .container {
+                padding: 0 20px;
             }
 
-            .events {
-                padding: 80px 0 60px;
-            }
-
-            .about {
-                padding: 80px 0 60px;
-            }
-
-            .contact {
-                padding: 80px 0 60px;
-            }
-
+            /* Section padding - much tighter */
+            .services,
+            .events,
+            .about,
+            .contact,
             .partners {
-                padding: 80px 0 60px;
+                padding: 50px 0 40px;
             }
 
-            /* Compact hero section for mobile */
-            .hero {
-                min-height: 85vh;
-                padding: 80px 0 40px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-                margin-bottom: 20px;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-                margin-bottom: 32px;
-            }
-
-            .hero-buttons {
-                gap: 12px;
-            }
-
-            .btn {
-                padding: 14px 28px;
-                font-size: 0.85rem;
-            }
-
-            /* Optimize section headers */
+            /* Section headers - compact */
             .section-header {
-                margin-bottom: 50px;
+                margin-bottom: 30px;
+            }
+
+            .section-eyebrow {
+                font-size: 0.7rem;
+                margin-bottom: 12px;
+            }
+
+            .section-eyebrow::before,
+            .section-eyebrow::after {
+                width: 20px;
             }
 
             .section-title {
-                font-size: 2rem;
-                margin-bottom: 16px;
+                font-size: 1.75rem;
+                margin-bottom: 10px;
             }
 
             .section-subtitle {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
-            /* Make services section horizontal scrollable on mobile */
+            /* ========== HERO ========== */
+            .hero {
+                min-height: auto;
+                padding: 100px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 16px;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.7rem;
+                margin-bottom: 16px;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 24px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                padding: 14px 24px;
+                font-size: 0.8rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* ========== STATS BAR ========== */
+            .stats-bar {
+                padding: 30px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+            }
+
+            /* ========== SERVICES ========== */
             .services-grid {
                 display: flex;
                 overflow-x: auto;
-                overflow-y: hidden;
-                gap: 20px;
+                gap: 12px;
                 scroll-snap-type: x mandatory;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
-                padding: 0 0 30px 0;
-                position: relative;
+                padding-bottom: 0;
             }
 
             .services-grid::-webkit-scrollbar {
                 display: none;
             }
 
-            /* Add scroll indicator hint on mobile */
             .services-grid::after {
-                content: '← Swipe to explore more →';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 0.75rem;
-                color: var(--stone);
-                letter-spacing: 0.05em;
-                opacity: 0.7;
-                pointer-events: none;
-                white-space: nowrap;
+                display: none;
             }
 
             .service-card {
-                flex: 0 0 85%;
+                flex: 0 0 80%;
                 scroll-snap-align: start;
-                padding: 35px 28px;
+                padding: 24px 20px;
             }
 
             .service-icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 16px;
-                margin-bottom: 20px;
-                font-size: 1.5rem;
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                margin-bottom: 16px;
+                font-size: 1.3rem;
             }
 
             .service-card h3 {
-                font-size: 1.5rem;
-                margin-bottom: 12px;
+                font-size: 1.25rem;
+                margin-bottom: 10px;
             }
 
             .service-card p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-                line-height: 1.6;
+                font-size: 0.85rem;
+                margin-bottom: 16px;
+                line-height: 1.5;
             }
 
-            /* Reduce stats bar padding */
-            .stats-bar {
-                padding: 40px 0;
+            .service-link {
+                font-size: 0.8rem;
             }
 
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .stat-label {
-                font-size: 0.75rem;
-            }
-
-            /* Optimize about section */
-            .about-image-main {
-                height: 400px;
-                font-size: 1rem;
-            }
-
-            .about-content h2 {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .about-content p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-            }
-
-            /* Optimize contact form */
-            .contact-form-wrapper {
-                padding: 35px 28px;
-            }
-
-            .contact-form-wrapper h3 {
-                font-size: 1.5rem;
-            }
-
-            .contact-info h2 {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-                margin-bottom: 32px;
-            }
-
-            /* Events section - elegant mobile redesign */
-
-            /* Compact horizontal scrolling filter tabs */
+            /* ========== EVENTS - STREAMLINED ========== */
             .events-sidebar {
                 position: static;
-                margin-bottom: 24px;
-            }
-
-            .filter-group {
-                margin-bottom: 16px;
-            }
-
-            .filter-label {
-                font-size: 0.7rem;
-                margin-bottom: 8px;
-            }
-
-            .filter-buttons {
+                margin-bottom: 20px;
                 display: flex;
+                gap: 12px;
+                flex-wrap: nowrap;
                 overflow-x: auto;
-                gap: 8px;
-                padding-bottom: 4px;
                 scrollbar-width: none;
                 -webkit-overflow-scrolling: touch;
             }
 
-            .filter-buttons::-webkit-scrollbar {
+            .events-sidebar::-webkit-scrollbar {
                 display: none;
+            }
+
+            .filter-group {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+
+            .filter-label {
+                display: none;
+            }
+
+            .filter-buttons {
+                display: flex;
+                gap: 6px;
+                padding-bottom: 0;
             }
 
             .filter-btn {
                 flex-shrink: 0;
-                padding: 8px 16px;
-                font-size: 0.75rem;
-                border-radius: 20px;
+                padding: 6px 12px;
+                font-size: 0.7rem;
+                border-radius: 16px;
+                background: var(--warm-white);
+                color: var(--charcoal);
+                border-color: var(--sand);
             }
 
-            /* Compact vertical event list */
+            .filter-btn:hover,
+            .filter-btn.active {
+                background: var(--sage);
+                color: white;
+                border-color: var(--sage);
+            }
+
+            /* Event cards - clean and aligned */
             .events-list {
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
 
-            /* Compact expandable event cards */
             .event-card {
-                display: flex;
-                flex-direction: column;
-                border-radius: 16px;
-                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                border-radius: 12px;
+                overflow: visible;
                 cursor: pointer;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
             }
 
-            /* Collapsed state - compact header row */
+            .event-card:hover {
+                transform: none;
+            }
+
             .event-card .event-date {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
-                gap: 6px;
-                padding: 12px 16px;
-                min-width: auto;
-                width: 100%;
+                gap: 8px;
+                padding: 12px 14px;
+                background: linear-gradient(135deg, var(--sage), var(--sage-dark));
             }
 
             .event-card .event-date .month {
-                font-size: 0.7rem;
-                order: 1;
+                font-size: 0.65rem;
             }
 
             .event-card .event-date .day {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
                 margin: 0;
-                order: 2;
+                font-weight: 400;
             }
 
             .event-card .event-date .year {
-                display: none;
+                font-size: 0.65rem;
+                display: inline;
             }
 
             .event-card .event-details {
-                padding: 16px;
-                padding-top: 0;
+                padding: 12px 14px;
             }
 
             .event-card .event-type {
-                font-size: 0.65rem;
-                padding: 4px 10px;
-                margin-bottom: 8px;
+                font-size: 0.6rem;
+                padding: 3px 8px;
+                margin-bottom: 6px;
             }
 
             .event-card .event-details h3 {
-                font-size: 1.1rem;
-                margin-bottom: 6px;
-                line-height: 1.3;
+                font-size: 1rem;
+                margin-bottom: 4px;
+                line-height: 1.2;
             }
 
             .event-card .event-meta {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 8px 16px;
-                font-size: 0.8rem;
+                gap: 4px 12px;
+                font-size: 0.75rem;
                 margin-bottom: 0;
             }
 
             .event-card .event-description {
-                font-size: 0.85rem;
-                margin-top: 10px;
-                padding-top: 10px;
+                font-size: 0.8rem;
+                margin-top: 8px;
+                padding-top: 8px;
                 border-top: 1px solid var(--sand);
                 display: none;
+                line-height: 1.4;
             }
 
             .event-card.expanded .event-description {
@@ -1563,70 +1548,320 @@
             }
 
             .event-card .event-action {
-                padding: 0 16px 16px;
+                padding: 12px 14px;
+                padding-top: 0;
                 display: none;
             }
 
             .event-card.expanded .event-action {
+                display: block;
+            }
+
+            .event-card .event-action > div {
                 display: flex;
+                align-items: center;
+                gap: 12px;
             }
 
             .event-card .event-register-btn {
                 flex: 1;
-                padding: 12px 20px;
-                font-size: 0.8rem;
+                padding: 10px 16px;
+                font-size: 0.75rem;
             }
 
             .event-card .spots-left {
-                font-size: 0.7rem;
-                margin-top: 6px;
+                font-size: 0.65rem;
+                margin-top: 0;
+                white-space: nowrap;
             }
 
-            /* Smooth expand animation */
-            .event-card {
-                transition: all 0.3s ease;
-            }
-
-            .event-card.expanded {
-                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            }
-
-            /* Subtle expand indicator */
+            /* Tap indicator */
             .event-card::after {
-                content: '+ Details';
+                content: 'Tap to view';
                 display: block;
                 text-align: center;
-                font-size: 0.7rem;
+                font-size: 0.6rem;
                 font-weight: 500;
                 letter-spacing: 0.05em;
-                color: var(--sage-dark);
-                padding: 10px;
-                background: linear-gradient(to bottom, transparent, var(--sand));
-                transition: all 0.3s ease;
-            }
-
-            .event-card.expanded::after {
-                content: '− Close';
+                color: var(--stone);
+                padding: 6px;
                 background: var(--sand);
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .event-card.expanded::after {
+                content: 'Tap to close';
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            /* ========== PARTNERS ========== */
+            .partners {
+                padding: 40px 0;
             }
 
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
+            .partners-marquee {
+                margin-top: 30px;
+            }
+
+            .partners-marquee::before,
+            .partners-marquee::after {
+                width: 40px;
+            }
+
+            .partners-track {
+                gap: 30px;
+                animation-duration: 12s;
+            }
+
+            .partner-logo {
+                padding: 16px 24px;
+                min-width: 140px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+
+            .partner-types {
+                margin-top: 30px;
+                gap: 12px;
+            }
+
+            .partner-type {
+                padding: 20px 16px;
+                border-radius: 12px;
+            }
+
+            .partner-type h3 {
+                font-size: 1.1rem;
+                margin-bottom: 6px;
+            }
+
+            .partner-type p {
+                font-size: 0.8rem;
+            }
+
+            /* ========== ABOUT ========== */
+            .about-image-main {
+                height: 280px;
+                font-size: 0.9rem;
+                border-radius: 16px;
+            }
+
+            .about-image-accent {
+                display: none;
+            }
+
+            .about-content h2 {
+                font-size: 1.75rem;
+                margin-bottom: 16px;
+            }
+
+            .about-content p {
+                font-size: 0.9rem;
+                margin-bottom: 16px;
+                line-height: 1.6;
             }
 
             .about-features {
                 grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .about-feature {
+                padding: 16px;
+            }
+
+            .about-feature h4 {
+                font-size: 1rem;
+            }
+
+            .about-feature p {
+                font-size: 0.8rem;
+            }
+
+            /* ========== CONTACT - COMPACT ========== */
+            .contact {
+                padding: 40px 0;
+            }
+
+            .contact-info h2 {
+                font-size: 1.75rem;
+                margin-bottom: 12px;
+            }
+
+            .contact-info > p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .contact-methods {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .contact-method {
+                gap: 12px;
+                padding: 12px;
+                background: rgba(255,255,255,0.5);
+                border-radius: 12px;
+            }
+
+            .contact-method-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                font-size: 1rem;
+            }
+
+            .contact-method-text h4 {
+                font-size: 0.9rem;
+                margin-bottom: 2px;
+            }
+
+            .contact-method-text p {
+                font-size: 0.8rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+
+            .contact-form-wrapper h3 {
+                font-size: 1.25rem;
+                margin-bottom: 4px;
+            }
+
+            .contact-form-wrapper > p {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 14px;
+            }
+
+            .form-group label {
+                font-size: 0.8rem;
+                margin-bottom: 6px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+                border-radius: 10px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .form-submit {
+                padding: 14px;
+                font-size: 0.9rem;
+                border-radius: 10px;
+            }
+
+            /* ========== FOOTER - COMPACT ========== */
+            footer {
+                padding: 40px 0 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 24px;
+            }
+
+            .footer-brand .logo {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .footer-brand p {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            .footer-social {
+                margin-top: 16px;
+                gap: 10px;
+            }
+
+            .footer-social a {
+                width: 38px;
+                height: 38px;
+            }
+
+            .footer-column {
+                display: none;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+                padding-top: 20px;
+                font-size: 0.8rem;
+            }
+
+            /* ========== GALLERY - COMPACT ========== */
+            .gallery {
+                padding: 50px 0 40px;
+            }
+
+            .gallery-carousel {
+                margin-top: 24px;
+            }
+
+            .gallery-track-wrapper {
+                padding: 0 20px;
+            }
+
+            .gallery-track {
+                gap: 12px;
+            }
+
+            .gallery-slide {
+                flex: 0 0 75%;
+                min-width: unset;
+            }
+
+            .gallery-image {
+                aspect-ratio: 3 / 4;
+                border-radius: 12px;
+            }
+
+            .gallery-caption {
+                padding: 12px 4px;
+            }
+
+            .gallery-caption h4 {
+                font-size: 1rem;
+                margin-bottom: 4px;
+            }
+
+            .gallery-caption p {
+                font-size: 0.75rem;
+            }
+
+            .gallery-controls {
+                margin-top: 20px;
+                gap: 16px;
+            }
+
+            .gallery-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+
+            .gallery-dot {
+                width: 8px;
+                height: 8px;
             }
         }
 
