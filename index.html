@@ -521,11 +521,11 @@
         .events-widget {
             background: var(--warm-white);
             border-radius: 24px;
-            padding: 0;
+            padding: 16px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.04);
-            max-width: 1100px;
+            max-width: 960px;
             margin: 0 auto;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .events-widget iframe,
@@ -533,8 +533,7 @@
         .events-widget object {
             width: 100%;
             border: 0;
-            min-height: 720px;
-            height: 100%;
+            height: clamp(520px, 65vh, 700px);
             display: block;
         }
 
@@ -542,7 +541,7 @@
             .events-widget iframe,
             .events-widget embed,
             .events-widget object {
-                min-height: 820px;
+                height: clamp(560px, 60vh, 720px);
             }
         }
 
