@@ -1272,22 +1272,43 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                min-height: auto;
-                padding: 140px 0 80px;
+            /* Mobile-specific optimizations for reduced scrolling */
+
+            /* Reduce section padding on mobile */
+            .services {
+                padding: 80px 0 60px;
             }
 
-            .hero-eyebrow {
-                margin-bottom: 16px;
+            .events {
+                padding: 80px 0 60px;
+            }
+
+            .about {
+                padding: 80px 0 60px;
+            }
+
+            .contact {
+                padding: 80px 0 60px;
+            }
+
+            .partners {
+                padding: 80px 0 60px;
+            }
+
+            /* Compact hero section for mobile */
+            .hero {
+                min-height: 85vh;
+                padding: 80px 0 40px;
             }
 
             .hero h1 {
+                font-size: 2.5rem;
                 margin-bottom: 20px;
             }
 
             .hero-description {
                 font-size: 1rem;
-                margin-bottom: 28px;
+                margin-bottom: 32px;
             }
 
             .hero-buttons {
@@ -1295,62 +1316,130 @@
             }
 
             .btn {
-                padding: 14px 24px;
-                font-size: 0.8rem;
+                padding: 14px 28px;
+                font-size: 0.85rem;
             }
 
-            .stats-bar {
-                padding: 40px 0;
-            }
-
-            .stat-number {
-                font-size: 2.6rem;
-            }
-
-            .services {
-                padding: 90px 0;
-            }
-
+            /* Optimize section headers */
             .section-header {
                 margin-bottom: 50px;
             }
 
             .section-title {
-                margin-bottom: 14px;
+                font-size: 2rem;
+                margin-bottom: 16px;
             }
 
             .section-subtitle {
                 font-size: 1rem;
             }
 
+            /* Make services section horizontal scrollable on mobile */
+            .services-grid {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 20px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: 0 0 30px 0;
+                position: relative;
+            }
+
+            .services-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Add scroll indicator hint on mobile */
+            .services-grid::after {
+                content: '← Swipe to explore more →';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.75rem;
+                color: var(--stone);
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                pointer-events: none;
+                white-space: nowrap;
+            }
+
             .service-card {
-                padding: 32px 24px;
+                flex: 0 0 85%;
+                scroll-snap-align: start;
+                padding: 35px 28px;
             }
 
             .service-icon {
                 width: 56px;
                 height: 56px;
-                font-size: 1.5rem;
+                border-radius: 16px;
                 margin-bottom: 20px;
+                font-size: 1.5rem;
             }
 
             .service-card h3 {
                 font-size: 1.5rem;
+                margin-bottom: 12px;
             }
 
             .service-card p {
-                margin-bottom: 16px;
+                font-size: 0.95rem;
+                margin-bottom: 20px;
                 line-height: 1.6;
             }
 
-            .events {
-                padding: 100px 0;
+            /* Reduce stats bar padding */
+            .stats-bar {
+                padding: 40px 0;
             }
 
-            .events-list {
-                gap: 18px;
+            .stat-number {
+                font-size: 2.5rem;
             }
 
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            /* Optimize about section */
+            .about-image-main {
+                height: 400px;
+                font-size: 1rem;
+            }
+
+            .about-content h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .about-content p {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+
+            /* Optimize contact form */
+            .contact-form-wrapper {
+                padding: 35px 28px;
+            }
+
+            .contact-form-wrapper h3 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+
+            /* Event cards */
             .event-card {
                 grid-template-columns: 1fr;
             }
@@ -1366,17 +1455,8 @@
                 margin: 0;
             }
 
-            .event-details {
-                padding: 24px;
-            }
-
             .event-action {
-                padding: 0 24px 24px;
-            }
-
-            .event-register-btn {
-                padding: 12px 22px;
-                font-size: 0.8rem;
+                padding: 0 30px 30px;
             }
 
             .form-row {
@@ -1396,58 +1476,6 @@
 
             .about-features {
                 grid-template-columns: 1fr;
-            }
-
-            .partners {
-                padding: 90px 0;
-            }
-
-            .partner-types {
-                margin-top: 50px;
-            }
-
-            .partner-type {
-                padding: 28px;
-            }
-
-            .about {
-                padding: 100px 0;
-            }
-
-            .about-image-main {
-                height: 420px;
-            }
-
-            .about-content h2 {
-                font-size: 2.4rem;
-            }
-
-            .about-content p {
-                font-size: 1rem;
-            }
-
-            .about-features {
-                gap: 16px;
-            }
-
-            .contact {
-                padding: 100px 0;
-            }
-
-            .contact-info h2 {
-                font-size: 2.4rem;
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-            }
-
-            .contact-form-wrapper {
-                padding: 32px;
-            }
-
-            footer {
-                padding: 60px 0 30px;
             }
         }
 
@@ -1954,65 +1982,13 @@
         }
 
         @media (max-width: 480px) {
-            nav {
-                padding: 16px 24px;
-            }
-
-            nav.scrolled {
-                padding: 12px 24px;
-            }
-
-            .mobile-menu {
-                max-width: 100%;
-                padding: 80px 24px 32px;
-            }
-
-            .mobile-menu-links a {
-                font-size: 1.3rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .service-card {
-                padding: 26px 20px;
-            }
-
-            .stats-grid {
-                gap: 24px;
-            }
-
-            .stat-number {
-                font-size: 2.2rem;
-            }
-
-            .event-date .day {
-                font-size: 2.2rem;
-            }
-
-            .gallery {
-                padding: 90px 0 60px;
-            }
-
             .gallery-controls {
                 gap: 16px;
-                margin-top: 28px;
             }
 
             .gallery-btn {
                 width: 48px;
                 height: 48px;
-            }
-
-            .contact-form-wrapper {
-                border-radius: 24px;
             }
         }
     </style>
@@ -2110,7 +2086,7 @@
                     From intimate corporate sessions to large-scale wellness retreats, we create experiences that transform.
                 </p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid" id="servicesGrid">
                 <div class="service-card">
                     <div class="service-icon">🏢</div>
                     <h3>Corporate Events</h3>
