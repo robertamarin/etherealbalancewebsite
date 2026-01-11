@@ -518,6 +518,13 @@
             background: var(--cream);
         }
 
+        .events-widget {
+            background: var(--warm-white);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+        }
+
         .events-layout {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -2503,28 +2510,10 @@
                     Secure your spot at our transformative wellness experiences
                 </p>
             </div>
-            <div class="events-layout">
-                <div class="events-sidebar">
-                    <div class="filter-group">
-                        <span class="filter-label">Event Type</span>
-                        <div class="filter-buttons" data-filter-group="type">
-                            <button class="filter-btn active" data-filter="all">All Events</button>
-                            <button class="filter-btn" data-filter="community">Community</button>
-                            <button class="filter-btn" data-filter="corporate">Corporate</button>
-                            <button class="filter-btn" data-filter="retreat">Retreats</button>
-                        </div>
-                    </div>
-                    <div class="filter-group">
-                        <span class="filter-label">Location</span>
-                        <div class="filter-buttons" data-filter-group="location">
-                            <button class="filter-btn active" data-filter="all">All Locations</button>
-                            <button class="filter-btn" data-filter="downtown">Downtown</button>
-                            <button class="filter-btn" data-filter="beach">Beachside</button>
-                            <button class="filter-btn" data-filter="hotel">Hotels</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="events-list" id="eventsList"></div>
+            <div class="events-widget">
+                <!-- Sweatpals widget begin -->
+                <script src="https://www.sweatpals.com/static/embed/community/calendar/events/script.js?communityUsername=etherealbalanceclub&primaryColorHex=278141&popupBackgroundColorHex=FFFFFF&headerFontColorHex=000000&fontFamily=Montserrat"></script>
+                <!-- Sweatpals widget end -->
             </div>
         </div>
     </section>
@@ -2859,7 +2848,6 @@
         </div>
     </div>
 
-    <script src="events.js"></script>
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
@@ -2877,97 +2865,6 @@
             menu.classList.toggle('active');
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
-
-        const eventsList = document.getElementById('eventsList');
-        const eventsData = window.eventsData || [];
-        let activeTypeFilter = 'all';
-        let activeLocationFilter = 'all';
-
-        function renderEvents() {
-            if (!eventsList) return;
-            eventsList.innerHTML = '';
-
-            if (!eventsData.length) {
-                eventsList.innerHTML = '<p class="event-description">New events are coming soon. Please check back for updates.</p>';
-                return;
-            }
-
-            eventsData.forEach((event) => {
-                const card = document.createElement('div');
-                card.className = 'event-card';
-                card.dataset.type = event.type;
-                card.dataset.location = event.location;
-
-                card.innerHTML = `
-                    <div class="event-date">
-                        <span class="month">${event.date?.month || ''}</span>
-                        <span class="day">${event.date?.day || ''}</span>
-                        <span class="year">${event.date?.year || ''}</span>
-                    </div>
-                    <div class="event-details">
-                        <span class="event-type">${event.typeLabel || ''}</span>
-                        <h3>${event.title || ''}</h3>
-                        <div class="event-meta">
-                            <span>📍 ${event.venue || ''}</span>
-                            <span>⏰ ${event.time || ''}</span>
-                        </div>
-                        <p class="event-description">${event.description || ''}</p>
-                    </div>
-                    <div class="event-action">
-                        <div>
-                            <button class="event-register-btn" type="button">Register</button>
-                            <span class="spots-left">${event.spots || ''}</span>
-                        </div>
-                    </div>
-                `;
-
-                card.querySelector('.event-register-btn').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openModal(event.modalTitle || event.title, event.modalDate || '');
-                });
-
-                // Mobile tap-to-expand functionality
-                card.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768 && !e.target.closest('.event-register-btn')) {
-                        card.classList.toggle('expanded');
-                    }
-                });
-
-                eventsList.appendChild(card);
-            });
-
-            applyEventFilters();
-        }
-
-        function applyEventFilters() {
-            document.querySelectorAll('.event-card').forEach((card) => {
-                const matchesType = activeTypeFilter === 'all' || card.dataset.type === activeTypeFilter;
-                const matchesLocation = activeLocationFilter === 'all' || card.dataset.location === activeLocationFilter;
-                card.style.display = matchesType && matchesLocation ? '' : 'none';
-            });
-        }
-
-        // Filter buttons
-        document.querySelectorAll('.filter-buttons').forEach((group) => {
-            group.addEventListener('click', (event) => {
-                const button = event.target.closest('.filter-btn');
-                if (!button) return;
-
-                group.querySelectorAll('.filter-btn').forEach((btn) => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.dataset.filter;
-                const groupName = group.dataset.filterGroup;
-                if (groupName === 'type') {
-                    activeTypeFilter = filterValue;
-                }
-                if (groupName === 'location') {
-                    activeLocationFilter = filterValue;
-                }
-
-                applyEventFilters();
-            });
-        });
 
         // ==================== GALLERY CAROUSEL ====================
         const eventGalleries = window.pastEventsData || [];
@@ -3180,8 +3077,6 @@
                 if (e.key === 'ArrowRight') changeLightboxImage(1);
             }
         });
-
-        renderEvents();
 
         // Modal functions
         function openModal(eventName, eventDate) {
