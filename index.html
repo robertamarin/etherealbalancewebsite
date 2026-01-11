@@ -1445,102 +1445,169 @@
                 margin-bottom: 32px;
             }
 
-            /* Events section - horizontal carousel on mobile */
+            /* Events section - elegant mobile redesign */
+
+            /* Compact horizontal scrolling filter tabs */
             .events-sidebar {
-                display: none;
+                position: static;
+                margin-bottom: 24px;
             }
 
-            .events-list {
-                display: flex;
-                overflow-x: auto;
-                overflow-y: hidden;
-                gap: 16px;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                padding-bottom: 20px;
+            .filter-group {
+                margin-bottom: 16px;
             }
 
-            .events-list::-webkit-scrollbar {
-                display: none;
-            }
-
-            .event-card {
-                flex: 0 0 85%;
-                min-width: 280px;
-                scroll-snap-align: start;
-                grid-template-columns: 1fr;
-                border-radius: 20px;
-            }
-
-            .event-date {
-                flex-direction: row;
-                gap: 12px;
-                padding: 16px 20px;
-            }
-
-            .event-date .month {
-                font-size: 0.75rem;
-            }
-
-            .event-date .day {
-                font-size: 2rem;
-                margin: 0;
-            }
-
-            .event-date .year {
-                font-size: 0.75rem;
-            }
-
-            .event-details {
-                padding: 20px;
-            }
-
-            .event-details h3 {
-                font-size: 1.3rem;
+            .filter-label {
+                font-size: 0.7rem;
                 margin-bottom: 8px;
             }
 
-            .event-meta {
-                flex-direction: column;
+            .filter-buttons {
+                display: flex;
+                overflow-x: auto;
                 gap: 8px;
-                margin-bottom: 10px;
-                font-size: 0.85rem;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
             }
 
-            .event-description {
-                font-size: 0.9rem;
-                line-height: 1.5;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
+            .filter-buttons::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filter-btn {
+                flex-shrink: 0;
+                padding: 8px 16px;
+                font-size: 0.75rem;
+                border-radius: 20px;
+            }
+
+            /* Compact vertical event list */
+            .events-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            /* Compact expandable event cards */
+            .event-card {
+                display: flex;
+                flex-direction: column;
+                border-radius: 16px;
                 overflow: hidden;
+                cursor: pointer;
             }
 
-            .event-action {
-                padding: 0 20px 20px;
-            }
-
-            .event-register-btn {
+            /* Collapsed state - compact header row */
+            .event-card .event-date {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 12px 16px;
+                min-width: auto;
                 width: 100%;
+            }
+
+            .event-card .event-date .month {
+                font-size: 0.7rem;
+                order: 1;
+            }
+
+            .event-card .event-date .day {
+                font-size: 1.4rem;
+                margin: 0;
+                order: 2;
+            }
+
+            .event-card .event-date .year {
+                display: none;
+            }
+
+            .event-card .event-details {
+                padding: 16px;
+                padding-top: 0;
+            }
+
+            .event-card .event-type {
+                font-size: 0.65rem;
+                padding: 4px 10px;
+                margin-bottom: 8px;
+            }
+
+            .event-card .event-details h3 {
+                font-size: 1.1rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
+            }
+
+            .event-card .event-meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 16px;
+                font-size: 0.8rem;
+                margin-bottom: 0;
+            }
+
+            .event-card .event-description {
+                font-size: 0.85rem;
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 1px solid var(--sand);
+                display: none;
+            }
+
+            .event-card.expanded .event-description {
+                display: block;
+            }
+
+            .event-card .event-action {
+                padding: 0 16px 16px;
+                display: none;
+            }
+
+            .event-card.expanded .event-action {
+                display: flex;
+            }
+
+            .event-card .event-register-btn {
+                flex: 1;
                 padding: 12px 20px;
                 font-size: 0.8rem;
             }
 
-            .spots-left {
+            .event-card .spots-left {
                 font-size: 0.7rem;
+                margin-top: 6px;
             }
 
-            /* Add swipe hint for events */
-            .events-layout::after {
-                content: '← Swipe to see more events →';
+            /* Smooth expand animation */
+            .event-card {
+                transition: all 0.3s ease;
+            }
+
+            .event-card.expanded {
+                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            }
+
+            /* Subtle expand indicator */
+            .event-card::after {
+                content: '+ Details';
                 display: block;
                 text-align: center;
-                font-size: 0.75rem;
-                color: var(--stone);
+                font-size: 0.7rem;
+                font-weight: 500;
                 letter-spacing: 0.05em;
-                opacity: 0.7;
-                margin-top: 8px;
+                color: var(--sage-dark);
+                padding: 10px;
+                background: linear-gradient(to bottom, transparent, var(--sand));
+                transition: all 0.3s ease;
+            }
+
+            .event-card.expanded::after {
+                content: '− Close';
+                background: var(--sand);
             }
 
             .form-row {
@@ -2651,8 +2718,16 @@
                     </div>
                 `;
 
-                card.querySelector('.event-register-btn').addEventListener('click', () => {
+                card.querySelector('.event-register-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
                     openModal(event.modalTitle || event.title, event.modalDate || '');
+                });
+
+                // Mobile tap-to-expand functionality
+                card.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768 && !e.target.closest('.event-register-btn')) {
+                        card.classList.toggle('expanded');
+                    }
                 });
 
                 eventsList.appendChild(card);
