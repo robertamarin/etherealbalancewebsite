@@ -523,9 +523,10 @@
             border-radius: 24px;
             padding: 0;
             box-shadow: 0 20px 50px rgba(0,0,0,0.04);
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            overflow: hidden;
+            max-height: 70vh;
+            overflow: auto;
         }
 
         .events-widget iframe,
@@ -533,8 +534,8 @@
         .events-widget object {
             width: 100%;
             border: 0;
-            min-height: 560px;
-            height: clamp(560px, 70vh, 760px);
+            min-height: 520px;
+            height: 100%;
             display: block;
         }
 
@@ -1460,13 +1461,14 @@
 
             .events-widget {
                 border-radius: 20px;
+                max-height: 75vh;
             }
 
             .events-widget iframe,
             .events-widget embed,
             .events-widget object {
-                min-height: 520px;
-                height: clamp(520px, 72vh, 680px);
+                min-height: 540px;
+                height: 75vh;
             }
 
             .events-sidebar::-webkit-scrollbar {
@@ -2382,13 +2384,14 @@
 
             .events-widget {
                 border-radius: 18px;
+                max-height: 80vh;
             }
 
             .events-widget iframe,
             .events-widget embed,
             .events-widget object {
                 min-height: 480px;
-                height: clamp(480px, 75vh, 620px);
+                height: 80vh;
             }
         }
     </style>
@@ -2887,6 +2890,7 @@
         </div>
     </div>
 
+    <script src="events.js"></script>
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
