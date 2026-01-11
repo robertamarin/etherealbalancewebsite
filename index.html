@@ -35,6 +35,12 @@
             scroll-behavior: smooth;
         }
 
+        /* Global link reset - prevents default blue color */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         body {
             font-family: 'Outfit', sans-serif;
             background: var(--cream);
@@ -1439,24 +1445,102 @@
                 margin-bottom: 32px;
             }
 
-            /* Event cards */
+            /* Events section - horizontal carousel on mobile */
+            .events-sidebar {
+                display: none;
+            }
+
+            .events-list {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 16px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding-bottom: 20px;
+            }
+
+            .events-list::-webkit-scrollbar {
+                display: none;
+            }
+
             .event-card {
+                flex: 0 0 85%;
+                min-width: 280px;
+                scroll-snap-align: start;
                 grid-template-columns: 1fr;
+                border-radius: 20px;
             }
 
             .event-date {
                 flex-direction: row;
-                gap: 16px;
-                padding: 20px;
+                gap: 12px;
+                padding: 16px 20px;
+            }
+
+            .event-date .month {
+                font-size: 0.75rem;
             }
 
             .event-date .day {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 margin: 0;
             }
 
+            .event-date .year {
+                font-size: 0.75rem;
+            }
+
+            .event-details {
+                padding: 20px;
+            }
+
+            .event-details h3 {
+                font-size: 1.3rem;
+                margin-bottom: 8px;
+            }
+
+            .event-meta {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 0.85rem;
+            }
+
+            .event-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
             .event-action {
-                padding: 0 30px 30px;
+                padding: 0 20px 20px;
+            }
+
+            .event-register-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.8rem;
+            }
+
+            .spots-left {
+                font-size: 0.7rem;
+            }
+
+            /* Add swipe hint for events */
+            .events-layout::after {
+                content: '← Swipe to see more events →';
+                display: block;
+                text-align: center;
+                font-size: 0.75rem;
+                color: var(--stone);
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                margin-top: 8px;
             }
 
             .form-row {
