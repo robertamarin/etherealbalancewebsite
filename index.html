@@ -1012,6 +1012,11 @@
             font-family: 'Outfit', sans-serif;
             transition: all 0.3s ease;
             background: white;
+            color: var(--charcoal);
+        }
+
+        .form-group select option {
+            color: var(--charcoal);
         }
 
         .form-group input:focus,
@@ -1682,36 +1687,7 @@
             }
 
             .contact-methods {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-bottom: 20px;
-            }
-
-            .contact-method {
-                flex: 1 1 calc(50% - 4px);
-                min-width: 140px;
-                gap: 8px;
-                padding: 10px;
-                background: rgba(255,255,255,0.5);
-                border-radius: 10px;
-            }
-
-            .contact-method-icon {
-                width: 32px;
-                height: 32px;
-                border-radius: 8px;
-                font-size: 0.9rem;
-            }
-
-            .contact-method-text h4 {
-                font-size: 0.75rem;
-                margin-bottom: 1px;
-            }
-
-            .contact-method-text p {
-                font-size: 0.7rem;
-                line-height: 1.3;
+                display: none;
             }
 
             .contact-form-wrapper {
