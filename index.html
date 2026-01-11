@@ -521,8 +521,18 @@
         .events-widget {
             background: var(--warm-white);
             border-radius: 24px;
-            padding: 32px;
+            padding: 20px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .events-widget iframe,
+        .events-widget embed,
+        .events-widget object {
+            width: 100%;
+            border: 0;
+            min-height: 640px;
         }
 
         .events-layout {
@@ -1441,6 +1451,16 @@
                 -webkit-overflow-scrolling: touch;
             }
 
+            .events-widget {
+                padding: 16px;
+            }
+
+            .events-widget iframe,
+            .events-widget embed,
+            .events-widget object {
+                min-height: 520px;
+            }
+
             .events-sidebar::-webkit-scrollbar {
                 display: none;
             }
@@ -2350,6 +2370,16 @@
             .gallery-btn {
                 width: 48px;
                 height: 48px;
+            }
+
+            .events-widget {
+                padding: 12px;
+            }
+
+            .events-widget iframe,
+            .events-widget embed,
+            .events-widget object {
+                min-height: 420px;
             }
         }
     </style>
