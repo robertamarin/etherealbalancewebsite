@@ -1013,6 +1013,58 @@
             font-size: 0.95rem;
         }
 
+        .partners-actions {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .partners-toggle {
+            padding: 12px 28px;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+        }
+
+        .partners-list-wrapper {
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 28px;
+            background: rgba(255,255,255,0.05);
+            display: none;
+        }
+
+        .partners-list-wrapper.open {
+            display: block;
+        }
+
+        .partners-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .partners-list a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .partners-list a::after {
+            content: '↗';
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .partners-list a:hover {
+            color: var(--sage-light);
+        }
+
         /* About Section */
         .about {
             padding: 140px 0;
@@ -1928,6 +1980,19 @@
 
             .partner-type p {
                 font-size: 0.8rem;
+            }
+
+            .partners-actions {
+                margin-top: 30px;
+            }
+
+            .partners-list-wrapper {
+                padding: 20px;
+            }
+
+            .partners-list {
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
 
             /* ========== ABOUT ========== */
@@ -2995,6 +3060,43 @@
                     <p>Local businesses and organizations committed to building healthier communities together.</p>
                 </div>
             </div>
+            <div class="partners-actions">
+                <button class="btn btn-secondary partners-toggle" id="partnersToggle" type="button" aria-expanded="false" aria-controls="partnersListWrapper">
+                    See all Partners
+                </button>
+                <div class="partners-list-wrapper" id="partnersListWrapper">
+                    <ul class="partners-list">
+                        <li><a href="#" onclick="return false;">Roam Homeware</a></li>
+                        <li><a href="#" onclick="return false;">Orli Hotel</a></li>
+                        <li><a href="#" onclick="return false;">Lucia at Aviara</a></li>
+                        <li><a href="#" onclick="return false;">SAGO</a></li>
+                        <li><a href="#" onclick="return false;">LSKD</a></li>
+                        <li><a href="#" onclick="return false;">Wonderland</a></li>
+                        <li><a href="#" onclick="return false;">Studio Casually</a></li>
+                        <li><a href="#" onclick="return false;">HERO Fitness</a></li>
+                        <li><a href="#" onclick="return false;">Moniker Coffee Co.</a></li>
+                        <li><a href="#" onclick="return false;">Ocean Pacific Gym &amp; Wellness</a></li>
+                        <li><a href="#" onclick="return false;">Trident Coffee</a></li>
+                        <li><a href="#" onclick="return false;">LMNT</a></li>
+                        <li><a href="#" onclick="return false;">Yesly</a></li>
+                        <li><a href="#" onclick="return false;">Pinkys</a></li>
+                        <li><a href="#" onclick="return false;">Brogi Mats</a></li>
+                        <li><a href="#" onclick="return false;">VYB Swim</a></li>
+                        <li><a href="#" onclick="return false;">Brick &amp; Bell</a></li>
+                        <li><a href="#" onclick="return false;">Olive Club</a></li>
+                        <li><a href="#" onclick="return false;">Zaytouna Olive Oil</a></li>
+                        <li><a href="#" onclick="return false;">Like Air</a></li>
+                        <li><a href="#" onclick="return false;">Blenders</a></li>
+                        <li><a href="#" onclick="return false;">SunBum</a></li>
+                        <li><a href="#" onclick="return false;">ATARAHbody</a></li>
+                        <li><a href="#" onclick="return false;">BUYA</a></li>
+                        <li><a href="#" onclick="return false;">organic Jaguar</a></li>
+                        <li><a href="#" onclick="return false;">herbs to acupuncture</a></li>
+                        <li><a href="#" onclick="return false;">SLATE</a></li>
+                        <li><a href="#" onclick="return false;">WildSociety</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -3306,6 +3408,16 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        const partnersToggle = document.getElementById('partnersToggle');
+        const partnersListWrapper = document.getElementById('partnersListWrapper');
+        if (partnersToggle && partnersListWrapper) {
+            partnersToggle.addEventListener('click', () => {
+                const isOpen = partnersListWrapper.classList.toggle('open');
+                partnersToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                partnersToggle.textContent = isOpen ? 'Hide Partners' : 'See all Partners';
+            });
         }
 
         // ==================== GALLERY CAROUSEL ====================
