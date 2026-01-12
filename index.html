@@ -518,59 +518,11 @@
             background: var(--cream);
         }
 
-        .events-layout {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-        }
-
-        .events-sidebar {
-            position: sticky;
-            top: 120px;
-            height: fit-content;
-        }
-
-        .filter-group {
-            margin-bottom: 32px;
-        }
-
-        .filter-label {
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--stone);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: var(--warm-white);
-            border: 1px solid var(--sand);
-            border-radius: 25px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--sage);
-            color: white;
-            border-color: var(--sage);
-        }
-
-        .events-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+        .sweatpals-container {
+            width: 100%;
+            min-height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .event-card {
@@ -2388,7 +2340,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-eyebrow">Premium Wellness Experiences</div>
+                <div class="hero-eyebrow">Premium Wellness Experiences Rob is SOOOOO CUTE</div>
                 <h1>Elevate Your <em>Wellness</em> Journey</h1>
                 <p class="hero-description">
                     Transformative Pilates events and wellness experiences for corporations, hotels, and communities. We bring people together through mindful movement and holistic well-being.
@@ -2503,29 +2455,11 @@
                     Secure your spot at our transformative wellness experiences
                 </p>
             </div>
-            <div class="events-layout">
-                <div class="events-sidebar">
-                    <div class="filter-group">
-                        <span class="filter-label">Event Type</span>
-                        <div class="filter-buttons" data-filter-group="type">
-                            <button class="filter-btn active" data-filter="all">All Events</button>
-                            <button class="filter-btn" data-filter="community">Community</button>
-                            <button class="filter-btn" data-filter="corporate">Corporate</button>
-                            <button class="filter-btn" data-filter="retreat">Retreats</button>
-                        </div>
-                    </div>
-                    <div class="filter-group">
-                        <span class="filter-label">Location</span>
-                        <div class="filter-buttons" data-filter-group="location">
-                            <button class="filter-btn active" data-filter="all">All Locations</button>
-                            <button class="filter-btn" data-filter="downtown">Downtown</button>
-                            <button class="filter-btn" data-filter="beach">Beachside</button>
-                            <button class="filter-btn" data-filter="hotel">Hotels</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="events-list" id="eventsList"></div>
+            <!-- Sweatpals widget begin -->
+            <div class="sweatpals-container">
+                <script src="https://www.sweatpals.com/static/embed/community/calendar/events/script.js?communityUsername=etherealbalanceclub&primaryColorHex=7A9167&popupBackgroundColorHex=FFFFFF&headerFontColorHex=2D2D2D&fontFamily=Montserrat"></script>
             </div>
+            <!-- Sweatpals widget end -->
         </div>
     </section>
 
