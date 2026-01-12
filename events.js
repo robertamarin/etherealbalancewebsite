@@ -63,7 +63,7 @@ window.pastEventsData = [
     title: 'SD Gal Pals',
     date: 'May 2025 • Private',
     coverLabel: 'Private Gathering',
-    coverImage: 'assets/event-studio.svg',
+    coverImage: 'assets/Galpal.jpeg,
     photos: [
       { src: 'assets/Galpal.jpeg', label: 'Private Session' },
       { src: 'assets/Galpal1.jpeg', label: 'Restorative Flow' },
@@ -96,7 +96,7 @@ window.pastEventsData = [
     title: 'Orli Hotel',
     date: 'June 2025 • Hotel Partnership',
     coverLabel: 'Hotel Partnership',
-    coverImage: 'assets/event-hotel.svg',
+    coverImage: 'assets/ORLI1.jpg',
     photos: [
       { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
       { src: 'assets/Orli.jpeg', label: 'Guest Session' },
