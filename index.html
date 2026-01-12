@@ -518,35 +518,212 @@
             background: var(--cream);
         }
 
-        .events-widget {
-            background: var(--warm-white);
-            border-radius: 24px;
-            padding: 16px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
-            max-width: 960px;
+        /* Events List */
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 1000px;
             margin: 0 auto;
-            overflow: hidden;
         }
 
-        .events-widget iframe,
-        .events-widget embed,
-        .events-widget object {
-            width: 100%;
-            border: 0;
-            height: clamp(520px, 65vh, 700px);
+        .event-card {
+            background: var(--warm-white);
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 180px 1fr auto;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .event-card:hover {
+            transform: translateX(10px);
+            border-color: var(--sage-light);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+        }
+
+        .event-date {
+            background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+            color: white;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .event-date .month {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .event-date .day {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin: 8px 0;
+        }
+
+        .event-date .year {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .event-details {
+            padding: 30px 35px;
+        }
+
+        .event-type {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--sage-light);
+            color: var(--sage-dark);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .event-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 24px;
+            color: var(--stone);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .event-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .event-description {
+            color: var(--charcoal-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .event-action {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .event-book-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--charcoal);
+            color: var(--cream);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .event-book-btn:hover {
+            background: var(--sage-dark);
+            transform: scale(1.05);
+        }
+
+        .event-spots {
+            font-size: 0.75rem;
+            color: var(--terracotta);
+            text-align: center;
+        }
+
+        /* Empty State - Show when no events */
+        .events-empty {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--warm-white);
+            border-radius: 28px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow:
+                0 4px 6px rgba(0,0,0,0.02),
+                0 12px 24px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .events-empty.show {
             display: block;
         }
 
-        @media (min-width: 1024px) {
-            .events-widget iframe,
-            .events-widget embed,
-            .events-widget object {
-                height: clamp(560px, 60vh, 720px);
-            }
+        .events-empty .empty-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: gentle-sway 3s ease-in-out infinite;
         }
 
-        .events-widget > div {
-            width: 100%;
+        @keyframes gentle-sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .events-empty h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .events-empty p {
+            color: var(--stone);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .events-empty .empty-cta {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--sage);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .events-empty .empty-cta:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 129, 65, 0.25);
+        }
+
+        /* Toggle: Add .no-events to .container to show empty state */
+        .events .container.no-events .events-widget {
+            display: none;
+        }
+
+        .events .container.no-events .events-empty {
+            display: block;
         }
 
         .events-layout {
@@ -1453,47 +1630,110 @@
                 font-size: 0.8rem;
             }
 
-            /* ========== EVENTS - STREAMLINED ========== */
-            .events-sidebar {
-                position: static;
-                margin-bottom: 20px;
-                display: flex;
+            /* ========== EVENTS - MOBILE ========== */
+            .events {
+                padding: 80px 0;
+            }
+
+            .events-list {
                 gap: 12px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                scrollbar-width: none;
-                -webkit-overflow-scrolling: touch;
             }
 
-            .events-widget {
-                border-radius: 20px;
-                max-height: 75vh;
+            .event-card {
+                display: grid;
+                grid-template-columns: 1fr;
+                border-radius: 16px;
             }
 
-            .events-widget iframe,
-            .events-widget embed,
-            .events-widget object {
-                min-height: 540px;
-                height: 75vh;
+            .event-card:hover {
+                transform: none;
             }
 
-            .events-sidebar::-webkit-scrollbar {
-                display: none;
-            }
-
-            .filter-group {
-                margin-bottom: 0;
-                flex-shrink: 0;
-            }
-
-            .filter-label {
-                display: none;
-            }
-
-            .filter-buttons {
+            .event-date {
                 display: flex;
-                gap: 6px;
-                padding-bottom: 0;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 8px;
+                padding: 14px 18px;
+            }
+
+            .event-date .month {
+                font-size: 0.7rem;
+            }
+
+            .event-date .day {
+                font-size: 1.4rem;
+                margin: 0;
+            }
+
+            .event-date .year {
+                font-size: 0.7rem;
+            }
+
+            .event-details {
+                padding: 16px 18px;
+            }
+
+            .event-type {
+                font-size: 0.65rem;
+                padding: 4px 10px;
+                margin-bottom: 8px;
+            }
+
+            .event-details h3 {
+                font-size: 1.15rem;
+                margin-bottom: 8px;
+            }
+
+            .event-meta {
+                flex-wrap: wrap;
+                gap: 6px 16px;
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+
+            .event-description {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .event-action {
+                padding: 0 18px 18px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .event-book-btn {
+                padding: 12px 24px;
+                font-size: 0.8rem;
+            }
+
+            .event-spots {
+                font-size: 0.7rem;
+            }
+
+            /* Mobile empty state */
+            .events-empty {
+                padding: 50px 30px;
+                border-radius: 20px;
+            }
+
+            .events-empty .empty-icon {
+                font-size: 2.8rem;
+            }
+
+            .events-empty h3 {
+                font-size: 1.5rem;
+            }
+
+            .events-empty p {
+                font-size: 0.9rem;
+            }
+
+            .events-empty .empty-cta {
+                padding: 12px 28px;
+                font-size: 0.85rem;
             }
 
             .filter-btn {
@@ -2388,16 +2628,74 @@
                 height: 48px;
             }
 
-            .events-widget {
-                border-radius: 18px;
-                max-height: 80vh;
+            .events {
+                padding: 60px 0;
             }
 
-            .events-widget iframe,
-            .events-widget embed,
-            .events-widget object {
-                min-height: 480px;
-                height: 80vh;
+            .events-list {
+                gap: 10px;
+            }
+
+            .event-card {
+                border-radius: 12px;
+            }
+
+            .event-date {
+                padding: 12px 16px;
+            }
+
+            .event-date .day {
+                font-size: 1.2rem;
+            }
+
+            .event-details {
+                padding: 14px 16px;
+            }
+
+            .event-details h3 {
+                font-size: 1.05rem;
+            }
+
+            .event-description {
+                font-size: 0.8rem;
+            }
+
+            .event-action {
+                padding: 0 16px 16px;
+            }
+
+            .event-book-btn {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+            }
+
+            /* Small mobile empty state */
+            .events-empty {
+                padding: 40px 24px;
+                border-radius: 16px;
+            }
+
+            .events-empty .empty-icon {
+                font-size: 2.5rem;
+                margin-bottom: 16px;
+            }
+
+            .events-empty h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .events-empty p {
+                font-size: 0.85rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .events-empty .empty-cta {
+                padding: 12px 24px;
+                font-size: 0.8rem;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -2558,10 +2856,15 @@
                     Secure your spot at our transformative wellness experiences
                 </p>
             </div>
-            <div class="events-widget">
-                <!-- Sweatpals widget begin -->
-                <script src="https://www.sweatpals.com/static/embed/community/calendar/events/script.js?communityUsername=etherealbalanceclub&primaryColorHex=278141&popupBackgroundColorHex=FFFFFF&headerFontColorHex=000000&fontFamily=Montserrat"></script>
-                <!-- Sweatpals widget end -->
+            <!-- Events list - populated by JavaScript from events.js -->
+            <div class="events-list" id="eventsList"></div>
+
+            <!-- Empty State - shown automatically when no events -->
+            <div class="events-empty" id="eventsEmpty">
+                <span class="empty-icon">🌿</span>
+                <h3>Taking a mindful pause...</h3>
+                <p>We're crafting our next transformative experiences. Stay connected to be the first to know when new events bloom!</p>
+                <a href="#contact" class="empty-cta">Join Our Community →</a>
             </div>
         </div>
     </section>
@@ -2898,6 +3201,61 @@
 
     <script src="events.js"></script>
     <script>
+        // ==================== EVENTS RENDERING ====================
+        function parseDate(dateStr) {
+            // Parse dates like "Jan 18, 2026" or "Feb 7-9, 2026"
+            const parts = dateStr.match(/([A-Za-z]+)\s+(\d+)(?:-\d+)?,?\s+(\d{4})/);
+            if (parts) {
+                return { month: parts[1], day: parts[2], year: parts[3] };
+            }
+            return { month: '', day: '', year: '' };
+        }
+
+        function renderEvents() {
+            const eventsList = document.getElementById('eventsList');
+            const eventsEmpty = document.getElementById('eventsEmpty');
+            const events = window.eventsData || [];
+
+            // Show empty state if no events
+            if (events.length === 0) {
+                eventsList.style.display = 'none';
+                eventsEmpty.style.display = 'block';
+                return;
+            }
+
+            // Hide empty state and show events
+            eventsEmpty.style.display = 'none';
+            eventsList.style.display = 'flex';
+
+            // Render each event card
+            eventsList.innerHTML = events.map(event => {
+                const date = parseDate(event.date);
+                return `
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">${date.month}</span>
+                        <span class="day">${date.day}</span>
+                        <span class="year">${date.year}</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-type">${event.type}</span>
+                        <h3>${event.title}</h3>
+                        <div class="event-meta">
+                            <span>📍 ${event.venue}</span>
+                            <span>🕐 ${event.time}</span>
+                        </div>
+                        <p class="event-description">${event.description}</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="${event.bookingLink}" target="_blank" rel="noopener" class="event-book-btn">Book Now</a>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // Initialize events on page load
+        renderEvents();
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
