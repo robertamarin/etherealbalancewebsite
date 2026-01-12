@@ -40,11 +40,10 @@ window.pastEventsData = [
     title: 'Private Party',
     date: 'April 2025 • Private',
     coverLabel: 'Private Event',
-    coverImage: 'assets/event-garden.svg',
+    coverImage: 'assets/Private.JPG',
     photos: [
-      { src: 'assets/event-garden.svg', label: 'Private Celebration' },
-      { src: 'assets/event-studio.svg', label: 'Custom Flow' },
-      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
+      { src: 'assets/Private.JPG', label: 'Private Celebration' },
+
     ]
   },
   {
@@ -101,33 +100,28 @@ window.pastEventsData = [
     title: 'Lucia',
     date: 'August 2025 • Hotel Partnership',
     coverLabel: 'Hotel Partnership',
-    coverImage: 'assets/event-hotel.svg',
+    coverImage: 'assets/Lucia.JPG',
     photos: [
-      { src: 'assets/event-hotel.svg', label: 'Resort Wellness' },
-      { src: 'assets/event-garden.svg', label: 'Morning Practice' },
-      { src: 'assets/event-beach.svg', label: 'Ocean Breeze' }
+      { src: 'assets/Lucia.JPG', label: 'Poolside Wellness' },
     ]
   },
   {
     title: 'Studio Casually',
     date: 'September 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/event-studio.svg',
+    coverImage: 'assets/SC.JPG',
     photos: [
-      { src: 'assets/event-studio.svg', label: 'Studio Session' },
-      { src: 'assets/event-garden.svg', label: 'Mindful Movement' },
-      { src: 'assets/event-beach.svg', label: 'Outdoor Reset' }
+      { src: 'assets/SC.JPG', label: 'Studio Session' },
+
     ]
   },
   {
     title: 'Moniker Coffee',
     date: 'November 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/event-downtown.svg',
+    coverImage: 'assets/Moniker.jpg',
     photos: [
-      { src: 'assets/event-downtown.svg', label: 'Cafe Energy' },
-      { src: 'assets/event-studio.svg', label: 'Flow Session' },
-      { src: 'assets/event-garden.svg', label: 'Community Connection' }
+      { src: 'assets/Moniker.jpg', label: 'Cafe Corporate Event' },
     ]
   }
 ]
