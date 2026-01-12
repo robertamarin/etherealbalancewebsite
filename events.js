@@ -30,11 +30,10 @@ window.pastEventsData = [
     title: 'ROAM Homeware',
     date: 'April 2025 • Community Event',
     coverLabel: 'Community Event',
-    coverImage: 'assets/event-garden.svg',
+    coverImage: 'assets/Roam.jpg',
     photos: [
-      { src: 'assets/event-garden.svg', label: 'Community Setup' },
-      { src: 'assets/event-beach.svg', label: 'Movement Flow' },
-      { src: 'assets/event-studio.svg', label: 'Gathering' }
+      { src: 'assets/Roam.jpg', label: 'Community Setup' },
+
     ]
   },
   {
@@ -74,22 +73,18 @@ window.pastEventsData = [
     title: 'LSKD',
     date: 'June 2025 • Corporate Event',
     coverLabel: 'Corporate Event',
-    coverImage: 'assets/event-downtown.svg',
+    coverImage: 'assets/LSKD.jpeg',
     photos: [
-      { src: 'assets/event-downtown.svg', label: 'Team Session' },
-      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' },
-      { src: 'assets/event-studio.svg', label: 'Stretch & Reset' }
+      { src: 'assets/LSKD.jpeg', label: 'Team Picture' },
     ]
   },
   {
     title: 'Wonderland',
     date: 'June 2025 • Community',
     coverLabel: 'Community Event',
-    coverImage: 'assets/event-desert.svg',
+    coverImage: 'assets/OB.jpg',
     photos: [
-      { src: 'assets/event-desert.svg', label: 'Community Arrival' },
-      { src: 'assets/event-garden.svg', label: 'Mindful Moments' },
-      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' }
+      { src: 'assets/OB.jpg', label: 'Community' },
     ]
   },
   {
