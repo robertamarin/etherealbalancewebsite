@@ -52,7 +52,7 @@ window.pastEventsData = [
     title: 'SAGO',
     date: 'May 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/event-beach.svg',
+    coverImage: 'assets/SAGO.jpg',
     photos: [
       { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
       { src: 'assets/event-garden.svg', label: 'Community Circle' },
