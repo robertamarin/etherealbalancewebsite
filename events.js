@@ -17,13 +17,13 @@ window.eventsData = [
   {
     title: 'Board Based Pilates',
     date: 'Feb 7, 2026',
-    time: '10:00 AM - 12:00 AM',
+    time: '10:00 AM to 12:00 AM',
     venue: 'Studio Casually Downtown San Diego',
     description: 'Start your weekend with an energizing Pilates flow and Local Market',
     type: 'Community',
     bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  },
-];
+  }
+]
 
 window.pastEventsData = [
   {
@@ -63,7 +63,7 @@ window.pastEventsData = [
     title: 'SD Gal Pals',
     date: 'May 2025 • Private',
     coverLabel: 'Private Gathering',
-    coverImage: 'assets/Galpal.jpeg,
+    coverImage: 'assets/Galpal.jpeg',
     photos: [
       { src: 'assets/Galpal.jpeg', label: 'Private Session' },
       { src: 'assets/Galpal1.jpeg', label: 'Restorative Flow' },
@@ -99,7 +99,7 @@ window.pastEventsData = [
     coverImage: 'assets/ORLI1.jpg',
     photos: [
       { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
-      { src: 'assets/Orli.jpeg', label: 'Guest Session' },
+      { src: 'assets/Orli.jpeg', label: 'Guest Session' }
     ]
   },
   {
@@ -135,4 +135,4 @@ window.pastEventsData = [
       { src: 'assets/event-garden.svg', label: 'Community Connection' }
     ]
   }
-];
+]
