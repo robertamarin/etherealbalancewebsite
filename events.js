@@ -52,7 +52,7 @@ window.pastEventsData = [
     title: 'SAGO',
     date: 'May 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/SAGO.jpg',
+    coverImage: 'assets/SAGO.JPG',
     photos: [
       { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
       { src: 'assets/event-garden.svg', label: 'Community Circle' },
@@ -99,7 +99,7 @@ window.pastEventsData = [
     coverImage: 'assets/ORLI1.jpg',
     photos: [
       { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
-      { src: 'assets/Orli.jpeg', label: 'Guest Session' }
+      { src: 'assets/Orli.JPEG', label: 'Guest Session' }
     ]
   },
   {
