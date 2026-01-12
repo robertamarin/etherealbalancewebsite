@@ -65,9 +65,9 @@ window.pastEventsData = [
     coverLabel: 'Private Gathering',
     coverImage: 'assets/event-studio.svg',
     photos: [
-      { src: 'assets/event-studio.svg', label: 'Private Session' },
-      { src: 'assets/event-garden.svg', label: 'Restorative Flow' },
-      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
+      { src: 'assets/Galpal.jpeg', label: 'Private Session' },
+      { src: 'assets/Galpal1.jpeg', label: 'Restorative Flow' },
+      { src: 'assets/Galpal2.jpeg', label: 'Wellness Lounge' }
     ]
   },
   {
@@ -98,9 +98,8 @@ window.pastEventsData = [
     coverLabel: 'Hotel Partnership',
     coverImage: 'assets/event-hotel.svg',
     photos: [
-      { src: 'assets/event-hotel.svg', label: 'Hotel Setting' },
-      { src: 'assets/event-garden.svg', label: 'Guest Session' },
-      { src: 'assets/event-studio.svg', label: 'Signature Flow' }
+      { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
+      { src: 'assets/Orli.jpeg', label: 'Guest Session' },
     ]
   },
   {
