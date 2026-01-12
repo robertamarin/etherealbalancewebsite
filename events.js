@@ -25,8 +25,6 @@ window.eventsData = [
   },
 ];
 
-/// Past events gallery data
-// Image paths should point to files in /assets.
 window.pastEventsData = [
   {
     title: 'ROAM Homeware',
@@ -40,6 +38,17 @@ window.pastEventsData = [
     ]
   },
   {
+    title: 'Private Party',
+    date: 'April 2025 • Private',
+    coverLabel: 'Private Event',
+    coverImage: 'assets/event-garden.svg',
+    photos: [
+      { src: 'assets/event-garden.svg', label: 'Private Celebration' },
+      { src: 'assets/event-studio.svg', label: 'Custom Flow' },
+      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
+    ]
+  },
+  {
     title: 'SAGO',
     date: 'May 2025 • Community',
     coverLabel: 'Community Partner',
@@ -48,6 +57,17 @@ window.pastEventsData = [
       { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
       { src: 'assets/event-garden.svg', label: 'Community Circle' },
       { src: 'assets/event-studio.svg', label: 'Wellness Moment' }
+    ]
+  },
+  {
+    title: 'SD Gal Pals',
+    date: 'May 2025 • Private',
+    coverLabel: 'Private Gathering',
+    coverImage: 'assets/event-studio.svg',
+    photos: [
+      { src: 'assets/event-studio.svg', label: 'Private Session' },
+      { src: 'assets/event-garden.svg', label: 'Restorative Flow' },
+      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
     ]
   },
   {
@@ -73,17 +93,6 @@ window.pastEventsData = [
     ]
   },
   {
-    title: 'SD Gal Pals',
-    date: 'May 2025 • Private',
-    coverLabel: 'Private Gathering',
-    coverImage: 'assets/event-studio.svg',
-    photos: [
-      { src: 'assets/event-studio.svg', label: 'Private Session' },
-      { src: 'assets/event-garden.svg', label: 'Restorative Flow' },
-      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
-    ]
-  },
-  {
     title: 'Orli Hotel',
     date: 'June 2025 • Hotel Partnership',
     coverLabel: 'Hotel Partnership',
@@ -106,17 +115,6 @@ window.pastEventsData = [
     ]
   },
   {
-    title: 'Moniker Coffee',
-    date: 'November 2025 • Community',
-    coverLabel: 'Community Partner',
-    coverImage: 'assets/event-downtown.svg',
-    photos: [
-      { src: 'assets/event-downtown.svg', label: 'Cafe Energy' },
-      { src: 'assets/event-studio.svg', label: 'Flow Session' },
-      { src: 'assets/event-garden.svg', label: 'Community Connection' }
-    ]
-  },
-  {
     title: 'Studio Casually',
     date: 'September 2025 • Community',
     coverLabel: 'Community Partner',
@@ -128,14 +126,14 @@ window.pastEventsData = [
     ]
   },
   {
-    title: 'Private Party',
-    date: 'April 2025 • Private',
-    coverLabel: 'Private Event',
-    coverImage: 'assets/event-garden.svg',
+    title: 'Moniker Coffee',
+    date: 'November 2025 • Community',
+    coverLabel: 'Community Partner',
+    coverImage: 'assets/event-downtown.svg',
     photos: [
-      { src: 'assets/event-garden.svg', label: 'Private Celebration' },
-      { src: 'assets/event-studio.svg', label: 'Custom Flow' },
-      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
+      { src: 'assets/event-downtown.svg', label: 'Cafe Energy' },
+      { src: 'assets/event-studio.svg', label: 'Flow Session' },
+      { src: 'assets/event-garden.svg', label: 'Community Connection' }
     ]
   }
 ]
