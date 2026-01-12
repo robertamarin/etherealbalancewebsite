@@ -99,9 +99,8 @@ window.pastEventsData = [
     coverLabel: 'Community Partner',
     coverImage: 'assets/SAGO.JPG',
     photos: [
-      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
-      { src: 'assets/event-garden.svg', label: 'Community Circle' },
-      { src: 'assets/event-studio.svg', label: 'Wellness Moment' }
+      { src: 'assets/SAGO.JPG', label: 'Outdoor Flow' },
+
     ]
   },
   {
@@ -111,7 +110,6 @@ window.pastEventsData = [
     coverImage: 'assets/Private.JPG',
     photos: [
       { src: 'assets/Private.JPG', label: 'Private Celebration' },
-
     ]
   },
   {
