@@ -29,91 +29,113 @@ window.eventsData = [
 // Update image paths below to point to files in /assets.
 window.pastEventsData = [
   {
-    title: 'Sunrise Flow @ Venice Beach',
-    date: 'January 2025 • 45 Attendees',
-    coverLabel: 'Sunrise Beach Session',
-    coverImage: 'assets/event-beach.svg',
-    photos: [
-      { src: 'assets/event-beach.svg', label: 'Beach Setup' },
-      { src: 'assets/event-garden.svg', label: 'Morning Flow' },
-      { src: 'assets/event-studio.svg', label: 'Group Session' }
-    ]
-  },
-  {
-    title: 'Google LA Wellness Week',
-    date: 'December 2024 • Corporate Partner',
-    coverLabel: 'Corporate Wellness Day',
-    coverImage: 'assets/event-downtown.svg',
-    photos: [
-      { src: 'assets/event-downtown.svg', label: 'Office Setup' },
-      { src: 'assets/event-hotel.svg', label: 'Team Session' },
-      { src: 'assets/event-beach.svg', label: 'Breathwork' }
-    ]
-  },
-  {
-    title: 'Joshua Tree Wellness Weekend',
-    date: 'November 2024 • 3-Day Retreat',
-    coverLabel: 'Desert Retreat',
-    coverImage: 'assets/event-desert.svg',
-    photos: [
-      { src: 'assets/event-desert.svg', label: 'Desert Arrival' },
-      { src: 'assets/event-garden.svg', label: 'Morning Practice' },
-      { src: 'assets/event-hotel.svg', label: 'Sound Healing' }
-    ]
-  },
-  {
-    title: 'Four Seasons Beverly Hills',
-    date: 'October 2024 • Hotel Partner',
-    coverLabel: 'Hotel Partnership Launch',
-    coverImage: 'assets/event-hotel.svg',
-    photos: [
-      { src: 'assets/event-hotel.svg', label: 'Luxury Setting' },
-      { src: 'assets/event-studio.svg', label: 'Private Session' },
-      { src: 'assets/event-downtown.svg', label: 'Guest Experience' }
-    ]
-  },
-  {
-    title: 'Summer Solstice Celebration',
-    date: 'June 2024 • 80+ Attendees',
-    coverLabel: 'Community Gathering',
+    title: 'ROAM Homeware',
+    date: 'April 2025 • Community Event',
+    coverLabel: 'Community Event',
     coverImage: 'assets/event-garden.svg',
     photos: [
-      { src: 'assets/event-garden.svg', label: 'Golden Hour' },
-      { src: 'assets/event-beach.svg', label: 'Community Circle' },
-      { src: 'assets/event-studio.svg', label: 'Movement Flow' }
+      { src: 'assets/event-garden.svg', label: 'Community Setup' },
+      { src: 'assets/event-beach.svg', label: 'Movement Flow' },
+      { src: 'assets/event-studio.svg', label: 'Gathering' }
     ]
   },
   {
-    title: 'DTLA Rooftop Series',
-    date: 'September 2024 • Monthly Event',
-    coverLabel: 'Rooftop Session',
-    coverImage: 'assets/event-downtown.svg',
-    photos: [
-      { src: 'assets/event-downtown.svg', label: 'City Views' },
-      { src: 'assets/event-studio.svg', label: 'Rooftop Setup' },
-      { src: 'assets/event-hotel.svg', label: 'Urban Wellness' }
-    ]
-  },
-  {
-    title: 'Breathwork & Movement',
-    date: 'August 2024 • Workshop Series',
-    coverLabel: 'Wellness Workshop',
-    coverImage: 'assets/event-studio.svg',
-    photos: [
-      { src: 'assets/event-studio.svg', label: 'Workshop Intro' },
-      { src: 'assets/event-garden.svg', label: 'Breathwork Circle' },
-      { src: 'assets/event-beach.svg', label: 'Movement Flow' }
-    ]
-  },
-  {
-    title: 'Ethereal Balance Launch',
-    date: 'March 2024 • Where It All Began',
-    coverLabel: 'Launch Event',
+    title: 'SAGO',
+    date: 'May 2025 • Community',
+    coverLabel: 'Community Partner',
     coverImage: 'assets/event-beach.svg',
     photos: [
-      { src: 'assets/event-beach.svg', label: 'The Beginning' },
-      { src: 'assets/event-downtown.svg', label: 'First Session' },
-      { src: 'assets/event-hotel.svg', label: 'Launch Day' }
+      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
+      { src: 'assets/event-garden.svg', label: 'Community Circle' },
+      { src: 'assets/event-studio.svg', label: 'Wellness Moment' }
+    ]
+  },
+  {
+    title: 'LSKD',
+    date: 'June 2025 • Corporate Event',
+    coverLabel: 'Corporate Event',
+    coverImage: 'assets/event-downtown.svg',
+    photos: [
+      { src: 'assets/event-downtown.svg', label: 'Team Session' },
+      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' },
+      { src: 'assets/event-studio.svg', label: 'Stretch & Reset' }
+    ]
+  },
+  {
+    title: 'Wonderland',
+    date: 'June 2025 • Community',
+    coverLabel: 'Community Event',
+    coverImage: 'assets/event-desert.svg',
+    photos: [
+      { src: 'assets/event-desert.svg', label: 'Community Arrival' },
+      { src: 'assets/event-garden.svg', label: 'Mindful Moments' },
+      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' }
+    ]
+  },
+  {
+    title: 'SD Gal Pals',
+    date: 'May 2025 • Private',
+    coverLabel: 'Private Gathering',
+    coverImage: 'assets/event-studio.svg',
+    photos: [
+      { src: 'assets/event-studio.svg', label: 'Private Session' },
+      { src: 'assets/event-garden.svg', label: 'Restorative Flow' },
+      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
+    ]
+  },
+  {
+    title: 'Orli Hotel',
+    date: 'June 2025 • Hotel Partnership',
+    coverLabel: 'Hotel Partnership',
+    coverImage: 'assets/event-hotel.svg',
+    photos: [
+      { src: 'assets/event-hotel.svg', label: 'Hotel Setting' },
+      { src: 'assets/event-garden.svg', label: 'Guest Session' },
+      { src: 'assets/event-studio.svg', label: 'Signature Flow' }
+    ]
+  },
+  {
+    title: 'Lucia',
+    date: 'August 2025 • Hotel Partnership',
+    coverLabel: 'Hotel Partnership',
+    coverImage: 'assets/event-hotel.svg',
+    photos: [
+      { src: 'assets/event-hotel.svg', label: 'Resort Wellness' },
+      { src: 'assets/event-garden.svg', label: 'Morning Practice' },
+      { src: 'assets/event-beach.svg', label: 'Ocean Breeze' }
+    ]
+  },
+  {
+    title: 'Moniker Coffee',
+    date: 'November 2025 • Community',
+    coverLabel: 'Community Partner',
+    coverImage: 'assets/event-downtown.svg',
+    photos: [
+      { src: 'assets/event-downtown.svg', label: 'Cafe Energy' },
+      { src: 'assets/event-studio.svg', label: 'Flow Session' },
+      { src: 'assets/event-garden.svg', label: 'Community Connection' }
+    ]
+  },
+  {
+    title: 'Studio Casually',
+    date: 'September 2025 • Community',
+    coverLabel: 'Community Partner',
+    coverImage: 'assets/event-studio.svg',
+    photos: [
+      { src: 'assets/event-studio.svg', label: 'Studio Session' },
+      { src: 'assets/event-garden.svg', label: 'Mindful Movement' },
+      { src: 'assets/event-beach.svg', label: 'Outdoor Reset' }
+    ]
+  },
+  {
+    title: 'Private Party',
+    date: 'April 2025 • Private',
+    coverLabel: 'Private Event',
+    coverImage: 'assets/event-garden.svg',
+    photos: [
+      { src: 'assets/event-garden.svg', label: 'Private Celebration' },
+      { src: 'assets/event-studio.svg', label: 'Custom Flow' },
+      { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
     ]
   }
 ];
