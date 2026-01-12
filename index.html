@@ -518,11 +518,90 @@
             background: var(--cream);
         }
 
-        .sweatpals-container {
-            width: 100%;
-            min-height: 400px;
-            border-radius: 20px;
+        .events-widget {
+            background: var(--warm-white);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+            max-width: 960px;
+            margin: 0 auto;
             overflow: hidden;
+        }
+
+        .events-widget iframe,
+        .events-widget embed,
+        .events-widget object {
+            width: 100%;
+            border: 0;
+            height: clamp(520px, 65vh, 700px);
+            display: block;
+        }
+
+        @media (min-width: 1024px) {
+            .events-widget iframe,
+            .events-widget embed,
+            .events-widget object {
+                height: clamp(560px, 60vh, 720px);
+            }
+        }
+
+        .events-widget > div {
+            width: 100%;
+        }
+
+        .events-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+        }
+
+        .events-sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 32px;
+        }
+
+        .filter-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--warm-white);
+            border: 1px solid var(--sand);
+            border-radius: 25px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--sage);
+            color: white;
+            border-color: var(--sage);
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         .event-card {
@@ -1384,6 +1463,18 @@
                 overflow-x: auto;
                 scrollbar-width: none;
                 -webkit-overflow-scrolling: touch;
+            }
+
+            .events-widget {
+                border-radius: 20px;
+                max-height: 75vh;
+            }
+
+            .events-widget iframe,
+            .events-widget embed,
+            .events-widget object {
+                min-height: 540px;
+                height: 75vh;
             }
 
             .events-sidebar::-webkit-scrollbar {
@@ -2296,6 +2387,18 @@
                 width: 48px;
                 height: 48px;
             }
+
+            .events-widget {
+                border-radius: 18px;
+                max-height: 80vh;
+            }
+
+            .events-widget iframe,
+            .events-widget embed,
+            .events-widget object {
+                min-height: 480px;
+                height: 80vh;
+            }
         }
     </style>
 </head>
@@ -2340,7 +2443,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-eyebrow">Premium Wellness Experiences Rob is SOOOOO CUTE</div>
+                <div class="hero-eyebrow">Premium Wellness Experiences</div>
                 <h1>Elevate Your <em>Wellness</em> Journey</h1>
                 <p class="hero-description">
                     Transformative Pilates events and wellness experiences for corporations, hotels, and communities. We bring people together through mindful movement and holistic well-being.
@@ -2455,11 +2558,11 @@
                     Secure your spot at our transformative wellness experiences
                 </p>
             </div>
-            <!-- Sweatpals widget begin -->
-            <div class="sweatpals-container">
-                <script src="https://www.sweatpals.com/static/embed/community/calendar/events/script.js?communityUsername=etherealbalanceclub&primaryColorHex=7A9167&popupBackgroundColorHex=FFFFFF&headerFontColorHex=2D2D2D&fontFamily=Montserrat"></script>
+            <div class="events-widget">
+                <!-- Sweatpals widget begin -->
+                <script src="https://www.sweatpals.com/static/embed/community/calendar/events/script.js?communityUsername=etherealbalanceclub&primaryColorHex=278141&popupBackgroundColorHex=FFFFFF&headerFontColorHex=000000&fontFamily=Montserrat"></script>
+                <!-- Sweatpals widget end -->
             </div>
-            <!-- Sweatpals widget end -->
         </div>
     </section>
 
@@ -2812,97 +2915,6 @@
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
 
-        const eventsList = document.getElementById('eventsList');
-        const eventsData = window.eventsData || [];
-        let activeTypeFilter = 'all';
-        let activeLocationFilter = 'all';
-
-        function renderEvents() {
-            if (!eventsList) return;
-            eventsList.innerHTML = '';
-
-            if (!eventsData.length) {
-                eventsList.innerHTML = '<p class="event-description">New events are coming soon. Please check back for updates.</p>';
-                return;
-            }
-
-            eventsData.forEach((event) => {
-                const card = document.createElement('div');
-                card.className = 'event-card';
-                card.dataset.type = event.type;
-                card.dataset.location = event.location;
-
-                card.innerHTML = `
-                    <div class="event-date">
-                        <span class="month">${event.date?.month || ''}</span>
-                        <span class="day">${event.date?.day || ''}</span>
-                        <span class="year">${event.date?.year || ''}</span>
-                    </div>
-                    <div class="event-details">
-                        <span class="event-type">${event.typeLabel || ''}</span>
-                        <h3>${event.title || ''}</h3>
-                        <div class="event-meta">
-                            <span>📍 ${event.venue || ''}</span>
-                            <span>⏰ ${event.time || ''}</span>
-                        </div>
-                        <p class="event-description">${event.description || ''}</p>
-                    </div>
-                    <div class="event-action">
-                        <div>
-                            <button class="event-register-btn" type="button">Register</button>
-                            <span class="spots-left">${event.spots || ''}</span>
-                        </div>
-                    </div>
-                `;
-
-                card.querySelector('.event-register-btn').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openModal(event.modalTitle || event.title, event.modalDate || '');
-                });
-
-                // Mobile tap-to-expand functionality
-                card.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768 && !e.target.closest('.event-register-btn')) {
-                        card.classList.toggle('expanded');
-                    }
-                });
-
-                eventsList.appendChild(card);
-            });
-
-            applyEventFilters();
-        }
-
-        function applyEventFilters() {
-            document.querySelectorAll('.event-card').forEach((card) => {
-                const matchesType = activeTypeFilter === 'all' || card.dataset.type === activeTypeFilter;
-                const matchesLocation = activeLocationFilter === 'all' || card.dataset.location === activeLocationFilter;
-                card.style.display = matchesType && matchesLocation ? '' : 'none';
-            });
-        }
-
-        // Filter buttons
-        document.querySelectorAll('.filter-buttons').forEach((group) => {
-            group.addEventListener('click', (event) => {
-                const button = event.target.closest('.filter-btn');
-                if (!button) return;
-
-                group.querySelectorAll('.filter-btn').forEach((btn) => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.dataset.filter;
-                const groupName = group.dataset.filterGroup;
-                if (groupName === 'type') {
-                    activeTypeFilter = filterValue;
-                }
-                if (groupName === 'location') {
-                    activeLocationFilter = filterValue;
-                }
-
-                applyEventFilters();
-            });
-        });
-
         // ==================== GALLERY CAROUSEL ====================
         const eventGalleries = window.pastEventsData || [];
         const galleryTrack = document.getElementById('galleryTrack');
@@ -3114,8 +3126,6 @@
                 if (e.key === 'ArrowRight') changeLightboxImage(1);
             }
         });
-
-        renderEvents();
 
         // Modal functions
         function openModal(eventName, eventDate) {
