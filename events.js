@@ -136,6 +136,4 @@ window.pastEventsData = [
       { src: 'assets/event-garden.svg', label: 'Community Connection' }
     ]
   }
-]
-
 ];
