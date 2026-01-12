@@ -15,59 +15,14 @@
 
 window.eventsData = [
   {
-    title: 'Sunrise Flow at the Beach',
-    date: 'Jan 18, 2026',
-    time: '7:00 AM - 8:30 AM',
-    venue: 'Venice Beach Pavilion',
-    description: 'Start your weekend with an energizing Pilates flow as the sun rises over the ocean.',
+    title: 'Board Based Pilates',
+    date: 'Feb 7, 2026',
+    time: '10:00 AM - 12:00 AM',
+    venue: 'Studio Casually Downtown San Diego',
+    description: 'Start your weekend with an energizing Pilates flow and Local Market',
     type: 'Community',
     bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
   },
-  {
-    title: 'Tech Company Wellness Day',
-    date: 'Jan 24, 2026',
-    time: '12:00 PM - 2:00 PM',
-    venue: 'Innovation Hub, DTLA',
-    description: 'A rejuvenating midday break featuring mat Pilates, breathwork, and stress-relief techniques.',
-    type: 'Corporate',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  },
-  {
-    title: 'Desert Wellness Weekend',
-    date: 'Feb 7-9, 2026',
-    time: '3-Day Retreat',
-    venue: 'Joshua Tree Resort',
-    description: 'An immersive weekend of Pilates, meditation, sound healing, and connection under the desert stars.',
-    type: 'Retreat',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  },
-  {
-    title: "Valentine's Partner Pilates",
-    date: 'Feb 14, 2026',
-    time: '6:00 PM - 8:00 PM',
-    venue: 'Ethereal Studio',
-    description: 'A special evening of partner exercises, connection, and champagne. Bring your favorite person!',
-    type: 'Community',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  },
-  {
-    title: 'Executive Retreat: The Ritz-Carlton',
-    date: 'Feb 21, 2026',
-    time: 'Full Day Program',
-    venue: 'Ritz-Carlton Marina del Rey',
-    description: 'An exclusive wellness experience for leadership teams featuring private sessions, spa treatments, and mindfulness training.',
-    type: 'Corporate',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  },
-  {
-    title: 'Spring Renewal Workshop',
-    date: 'Mar 1, 2026',
-    time: '9:00 AM - 12:00 PM',
-    venue: 'Botanical Gardens',
-    description: 'Welcome spring with an outdoor workshop combining Pilates, breathwork, and intention-setting surrounded by nature.',
-    type: 'Community',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
-  }
 ];
 
 // Past events gallery data
