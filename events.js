@@ -25,8 +25,8 @@ window.eventsData = [
   },
 ];
 
-// Past events gallery data
-// Update image paths below to point to files in /assets.
+/// Past events gallery data
+// Image paths should point to files in /assets.
 window.pastEventsData = [
   {
     title: 'ROAM Homeware',
@@ -138,4 +138,6 @@ window.pastEventsData = [
       { src: 'assets/event-hotel.svg', label: 'Wellness Lounge' }
     ]
   }
+]
+
 ];
