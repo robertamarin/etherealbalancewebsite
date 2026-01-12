@@ -27,34 +27,59 @@ window.eventsData = [
 
 window.pastEventsData = [
   {
-    title: 'ROAM Homeware',
-    date: 'April 2025 • Community Event',
-    coverLabel: 'Community Event',
-    coverImage: 'assets/Roam.jpg',
-    photos: [
-      { src: 'assets/Roam.jpg', label: 'Community Setup' },
-
-    ]
-  },
-  {
-    title: 'Private Party',
-    date: 'April 2025 • Private',
-    coverLabel: 'Private Event',
-    coverImage: 'assets/Private.JPG',
-    photos: [
-      { src: 'assets/Private.JPG', label: 'Private Celebration' },
-
-    ]
-  },
-  {
-    title: 'SAGO',
-    date: 'May 2025 • Community',
+    title: 'Moniker Coffee',
+    date: 'November 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/SAGO.JPG',
+    coverImage: 'assets/Moniker.jpg',
     photos: [
-      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
-      { src: 'assets/event-garden.svg', label: 'Community Circle' },
-      { src: 'assets/event-studio.svg', label: 'Wellness Moment' }
+      { src: 'assets/Moniker.jpg', label: 'Cafe Corporate Event' },
+    ]
+  },
+  {
+    title: 'Studio Casually',
+    date: 'September 2025 • Community',
+    coverLabel: 'Community Partner',
+    coverImage: 'assets/SC.JPG',
+    photos: [
+      { src: 'assets/SC.JPG', label: 'Studio Session' },
+
+    ]
+  },
+  {
+    title: 'Lucia',
+    date: 'August 2025 • Hotel Partnership',
+    coverLabel: 'Hotel Partnership',
+    coverImage: 'assets/Lucia.JPG',
+    photos: [
+      { src: 'assets/Lucia.JPG', label: 'Poolside Wellness' },
+    ]
+  },
+  {
+    title: 'Orli Hotel',
+    date: 'June 2025 • Hotel Partnership',
+    coverLabel: 'Hotel Partnership',
+    coverImage: 'assets/ORLI1.jpg',
+    photos: [
+      { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
+      { src: 'assets/Orli.JPEG', label: 'Guest Session' }
+    ]
+  },
+  {
+    title: 'Wonderland',
+    date: 'June 2025 • Community',
+    coverLabel: 'Community Event',
+    coverImage: 'assets/OB.jpg',
+    photos: [
+      { src: 'assets/OB.jpg', label: 'Community' },
+    ]
+  },
+  {
+    title: 'LSKD',
+    date: 'June 2025 • Corporate Event',
+    coverLabel: 'Corporate Event',
+    coverImage: 'assets/LSKD.jpeg',
+    photos: [
+      { src: 'assets/LSKD.jpeg', label: 'Team Picture' },
     ]
   },
   {
@@ -69,59 +94,34 @@ window.pastEventsData = [
     ]
   },
   {
-    title: 'LSKD',
-    date: 'June 2025 • Corporate Event',
-    coverLabel: 'Corporate Event',
-    coverImage: 'assets/LSKD.jpeg',
-    photos: [
-      { src: 'assets/LSKD.jpeg', label: 'Team Picture' },
-    ]
-  },
-  {
-    title: 'Wonderland',
-    date: 'June 2025 • Community',
-    coverLabel: 'Community Event',
-    coverImage: 'assets/OB.jpg',
-    photos: [
-      { src: 'assets/OB.jpg', label: 'Community' },
-    ]
-  },
-  {
-    title: 'Orli Hotel',
-    date: 'June 2025 • Hotel Partnership',
-    coverLabel: 'Hotel Partnership',
-    coverImage: 'assets/ORLI1.jpg',
-    photos: [
-      { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
-      { src: 'assets/Orli.JPEG', label: 'Guest Session' }
-    ]
-  },
-  {
-    title: 'Lucia',
-    date: 'August 2025 • Hotel Partnership',
-    coverLabel: 'Hotel Partnership',
-    coverImage: 'assets/Lucia.JPG',
-    photos: [
-      { src: 'assets/Lucia.JPG', label: 'Poolside Wellness' },
-    ]
-  },
-  {
-    title: 'Studio Casually',
-    date: 'September 2025 • Community',
+    title: 'SAGO',
+    date: 'May 2025 • Community',
     coverLabel: 'Community Partner',
-    coverImage: 'assets/SC.JPG',
+    coverImage: 'assets/SAGO.JPG',
     photos: [
-      { src: 'assets/SC.JPG', label: 'Studio Session' },
+      { src: 'assets/event-beach.svg', label: 'Outdoor Flow' },
+      { src: 'assets/event-garden.svg', label: 'Community Circle' },
+      { src: 'assets/event-studio.svg', label: 'Wellness Moment' }
+    ]
+  },
+  {
+    title: 'Private Party',
+    date: 'April 2025 • Private',
+    coverLabel: 'Private Event',
+    coverImage: 'assets/Private.JPG',
+    photos: [
+      { src: 'assets/Private.JPG', label: 'Private Celebration' },
 
     ]
   },
   {
-    title: 'Moniker Coffee',
-    date: 'November 2025 • Community',
-    coverLabel: 'Community Partner',
-    coverImage: 'assets/Moniker.jpg',
+    title: 'ROAM Homeware',
+    date: 'April 2025 • Community Event',
+    coverLabel: 'Community Event',
+    coverImage: 'assets/Roam.jpg',
     photos: [
-      { src: 'assets/Moniker.jpg', label: 'Cafe Corporate Event' },
+      { src: 'assets/Roam.jpg', label: 'Community Setup' },
+
     ]
   }
 ]
