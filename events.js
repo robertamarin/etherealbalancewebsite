@@ -22,6 +22,15 @@ window.eventsData = [
     description: 'Start your weekend with an energizing Pilates flow and Local Market',
     type: 'Community',
     bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
+  },
+    {
+    title: 'Board Based Pilates',
+    date: 'Feb 7, 2026',
+    time: '10:00 AM to 12:00 AM',
+    venue: 'Studio Casually Downtown San Diego',
+    description: 'Start your weekend with an energizing Pilates flow and Local Market',
+    type: 'Community',
+    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
   }
 ]
 
