@@ -2348,30 +2348,6 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .gallery-image .view-gallery-icon {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 44px;
-            height: 44px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-            z-index: 3;
-            color: var(--charcoal);
-            font-size: 1.2rem;
-        }
-
-        .gallery-slide:hover .view-gallery-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
-
         .gallery-caption {
             padding: 20px 8px;
             text-align: center;
@@ -2773,9 +2749,525 @@
                 text-align: center;
             }
         }
+
+        /* ==================== LUXURY EFFECTS ==================== */
+
+        /* Grain/Noise Texture Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9997;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered Grid Item Animations */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Elegant Text Shimmer - Single Color */
+        .gradient-text {
+            color: var(--sage-dark);
+            background: linear-gradient(
+                90deg,
+                var(--sage-dark) 0%,
+                var(--sage) 50%,
+                var(--sage-dark) 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: elegantShimmer 6s ease-in-out infinite;
+        }
+
+        @keyframes elegantShimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        /* Magnetic Button Effect */
+        .magnetic-btn {
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Subtle Luxury Hover Effects */
+        .glow-hover {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+            border-radius: inherit;
+        }
+
+        .glow-hover:hover::before {
+            opacity: 1;
+        }
+
+        .glow-hover > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Elegant Button Shine Effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+            transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-shine:hover::after {
+            left: 100%;
+        }
+
+        /* Floating Parallax Elements */
+        .parallax-element {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .parallax-shape-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(156, 175, 136, 0.08) 0%, transparent 70%);
+            top: 5%;
+            right: 0%;
+            animation: floatShape1 30s ease-in-out infinite;
+        }
+
+        .parallax-shape-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(196, 144, 122, 0.06) 0%, transparent 70%);
+            bottom: 10%;
+            left: 0%;
+            animation: floatShape2 35s ease-in-out infinite;
+        }
+
+        .parallax-shape-3 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(232, 226, 217, 0.15) 0%, transparent 70%);
+            top: 35%;
+            left: 15%;
+            animation: floatShape3 28s ease-in-out infinite;
+        }
+
+        .parallax-shape-4 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(156, 175, 136, 0.1);
+            top: 20%;
+            right: 15%;
+            animation: floatShape4 32s ease-in-out infinite;
+        }
+
+        .parallax-shape-5 {
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(196, 144, 122, 0.08);
+            bottom: 25%;
+            right: 8%;
+            border-radius: 30%;
+            animation: floatShape5 26s ease-in-out infinite;
+        }
+
+        @keyframes floatShape1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, 30px); }
+        }
+
+        @keyframes floatShape2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(25px, -20px); }
+        }
+
+        @keyframes floatShape3 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 20px); }
+        }
+
+        @keyframes floatShape4 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-25px, 35px); }
+        }
+
+        @keyframes floatShape5 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -25px); }
+        }
+
+        /* Stats Counter Animation */
+        .stat-number {
+            display: inline-block;
+        }
+
+        .stat-number.counting {
+            animation: pulse 0.1s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Text Reveal Animation */
+        .text-reveal {
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: textReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes textReveal {
+            to { transform: translateY(0); }
+        }
+
+        /* Section Divider Animation */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sage), transparent);
+            transform: scaleX(0);
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-divider.active {
+            transform: scaleX(1);
+        }
+
+        /* Service Card Enhanced Hover */
+        .service-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0) 0%, rgba(156, 175, 136, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Event Card Glow */
+        .event-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+        }
+
+        .event-card:hover {
+            box-shadow: 0 20px 60px rgba(156, 175, 136, 0.2), 0 0 30px rgba(156, 175, 136, 0.1);
+        }
+
+        /* Gallery Slide Enhanced */
+        .gallery-slide {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-slide:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-slide:hover .gallery-image {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-image {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+            border-radius: 16px;
+        }
+
+        /* Partner Logo Animation */
+        .partner-logo {
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.1);
+            color: var(--sage-dark);
+        }
+
+        /* Contact Form Enhanced */
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.2), 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Loading Animation for Page */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .page-loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            animation: loaderPulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: var(--sand);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--sage), var(--terracotta));
+            animation: loaderProgress 1.5s ease-in-out forwards;
+        }
+
+        @keyframes loaderPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        @keyframes loaderProgress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Smooth Section Background Transitions */
+        section {
+            position: relative;
+        }
+
+        /* Nav Link Hover Animation Enhanced */
+        .nav-links a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(156, 175, 136, 0.1), transparent);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            transform: translateY(0);
+        }
+
+        /* Footer Link Hover */
+        .footer-links a {
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--sage-light);
+            transform: translateX(5px);
+        }
+
+        /* About Image Parallax */
+        .about-image-main {
+            overflow: hidden;
+        }
+
+        .about-image-photo {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-image:hover .about-image-photo {
+            transform: scale(1.05);
+        }
+
+        /* Modal Enhanced */
+        .modal {
+            animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--charcoal);
+            color: var(--cream);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--sage-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(122, 145, 103, 0.3);
+        }
     </style>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img class="loader-logo" src="assets/EB(1).svg" alt="Loading...">
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="logo">
@@ -2815,16 +3307,23 @@
 
    <!-- Hero Section -->
     <section class="hero">
+        <!-- Parallax Floating Elements -->
+        <div class="parallax-element parallax-shape-1"></div>
+        <div class="parallax-element parallax-shape-2"></div>
+        <div class="parallax-element parallax-shape-3"></div>
+        <div class="parallax-element parallax-shape-4"></div>
+        <div class="parallax-element parallax-shape-5"></div>
+
         <div class="container">
             <div class="hero-content">
                 <div class="hero-eyebrow">Premium Wellness Experiences</div>
-                <h1>Elevate Your <em>Wellness</em> Journey</h1>
+                <h1>Elevate Your <em class="gradient-text">Wellness</em> Journey</h1>
                 <p class="hero-description">
                     Transformative Pilates events and wellness experiences for corporations, hotels, and communities. We bring people together through mindful movement and holistic well-being.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#events" class="btn btn-primary">Explore Events →</a>
-                    <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+                    <a href="#events" class="btn btn-primary magnetic-btn btn-shine">Explore Events →</a>
+                    <a href="#contact" class="btn btn-secondary magnetic-btn">Partner With Us</a>
                 </div>
             </div>
         </div>
@@ -2862,7 +3361,7 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-eyebrow">What We Offer</div>
                 <h2 class="section-title">Our Wellness Services</h2>
                 <p class="section-subtitle">
@@ -2870,42 +3369,42 @@
                 </p>
             </div>
             <div class="services-grid" id="servicesGrid">
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Corporate Events</h3>
                     <p>
                         Bring wellness to your workplace with custom Pilates sessions, stress-relief workshops, and team-building wellness retreats designed for busy professionals.
                     </p>
                     <a href="#contact" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Hotel Partnerships</h3>
                     <p>
                         Elevate your guest experience with premium wellness programming. From sunrise yoga to signature Pilates classes that keep guests coming back.
                     </p>
                     <a href="#contact" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Community Events</h3>
                     <p>
                         Join our vibrant wellness community through pop-up events, seasonal retreats, and special workshops that bring like-minded people together.
                     </p>
                     <a href="#events" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Private Sessions</h3>
                     <p>
                         Personalized one-on-one or small group sessions tailored to your specific goals, whether rehabilitation, strength building, or stress relief.
                     </p>
                     <a href="#contact" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Wellness Retreats</h3>
                     <p>
                         Multi-day immersive experiences combining Pilates, meditation, nutrition, and holistic practices in beautiful destination settings.
                     </p>
                     <a href="#events" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card glow-hover stagger-item">
                     <h3>Custom Programs</h3>
                     <p>
                         Let us design a bespoke wellness program for your organization, event, or special occasion. Every detail crafted to your vision.
@@ -2919,7 +3418,7 @@
     <!-- Events Section -->
     <section class="events" id="events">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-eyebrow">Join Us</div>
                 <h2 class="section-title">Upcoming Events</h2>
                 <p class="section-subtitle">
@@ -2942,7 +3441,7 @@
     <!-- Past Events Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-eyebrow">Our Story in Motion</div>
                 <h2 class="section-title">Past Events</h2>
                 <p class="section-subtitle">
@@ -2988,7 +3487,7 @@
     <!-- Partners Section -->
     <section class="partners" id="partners">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-eyebrow">Trusted By</div>
                 <h2 class="section-title">Our Partners</h2>
                 <p class="section-subtitle">
@@ -3113,7 +3612,7 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
+                <div class="about-image reveal-left">
                     <div class="about-image-main">
                         <img class="about-image-photo" src="assets/JazMeg.jpg" alt="Jazmin Sabah and Megan Pappa">
                     </div>
@@ -3123,7 +3622,7 @@
                         <small>Building Community</small>
                     </div>
                 </div>
-                <div class="about-content">
+                <div class="about-content reveal-right">
                     <h2>More Than Fitness.<br><em>It's Intentional.</em></h2>
                     <p>
                         Ethereal Balance was founded by <strong>Jazmin Sabah</strong> with a deeply personal mission: to create spaces where wellness becomes a bridge that connects people. Driven by her passion for bringing communities together through mindful movement, Jazmin envisioned something beyond traditional fitness—a movement rooted in intention.
@@ -3173,8 +3672,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Let's Create Something <em>Beautiful</em></h2>
+                <div class="contact-info reveal-left">
+                    <h2>Let's Create Something <em class="gradient-text">Beautiful</em></h2>
                     <p>
                         Whether you're looking to host a corporate wellness day, partner for hotel programming, or inquire about our community events—we'd love to hear from you.
                     </p>
@@ -3202,7 +3701,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper reveal-right">
                     <h3>Get In Touch</h3>
                     <p>Fill out the form and we'll be in touch within 24 hours.</p>
                     <form id="contactForm" action="https://formspree.io/f/mnjjadqb" method="POST">
@@ -3494,7 +3993,6 @@
                 slide.innerHTML = `
                     <div class="gallery-image" style="background-image: url('${event.coverImage || ''}');">
                         ${coverLabel ? `<span>${coverLabel}</span>` : ''}
-                        <div class="view-gallery-icon">📷</div>
                     </div>
                     <div class="gallery-caption">
                         <h4>${event.title || ''}</h4>
@@ -3716,6 +4214,184 @@
                 closeModal();
             }
         });
+
+        // ==================== LUXURY EFFECTS JAVASCRIPT ====================
+
+        // Page Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('loaded');
+            }, 1200);
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Staggered Grid Animation
+        const staggerGrids = document.querySelectorAll('.services-grid, .about-features');
+
+        staggerGrids.forEach(grid => {
+            const items = grid.querySelectorAll('.stagger-item, .about-feature');
+
+            const gridObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('active');
+                        }, index * 100);
+                    });
+                    gridObserver.unobserve(grid);
+                }
+            }, { threshold: 0.2 });
+
+            gridObserver.observe(grid);
+        });
+
+        // Stats Counter Animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let statsAnimated = false;
+
+        function animateCounter(element) {
+            const text = element.textContent;
+            const match = text.match(/(\d+)/);
+            if (!match) return;
+
+            const target = parseInt(match[1]);
+            const suffix = text.replace(/\d+/, '');
+            let current = 0;
+            const increment = target / 50;
+            const duration = 1500;
+            const stepTime = duration / 50;
+
+            const counter = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(counter);
+                }
+                element.textContent = Math.floor(current) + suffix;
+            }, stepTime);
+        }
+
+        const statsBar = document.querySelector('.stats-bar');
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                statNumbers.forEach(stat => animateCounter(stat));
+            }
+        }, { threshold: 0.5 });
+
+        if (statsBar) statsObserver.observe(statsBar);
+
+        // Magnetic Button Effect (very subtle for luxury feel)
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Parallax Effect on Scroll for Hero Elements
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            parallaxElements.forEach((el, index) => {
+                const speed = 0.1 + (index * 0.05);
+                const yPos = scrollY * speed;
+                el.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Add stagger-item class to about features dynamically
+        document.querySelectorAll('.about-feature').forEach(feature => {
+            feature.classList.add('stagger-item');
+        });
+
+        // Smooth appearance for dynamically loaded content
+        const observeNewContent = new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === 1) {
+                        const cards = node.querySelectorAll ? node.querySelectorAll('.event-card, .gallery-slide') : [];
+                        cards.forEach((card, index) => {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }
+                });
+            });
+        });
+
+        const eventsList = document.getElementById('eventsList');
+        const galleryTrack2 = document.getElementById('galleryTrack');
+        if (eventsList) observeNewContent.observe(eventsList, { childList: true });
+        if (galleryTrack2) observeNewContent.observe(galleryTrack2, { childList: true });
+
+        // Intersection Observer for section dividers
+        document.querySelectorAll('.section-divider').forEach(divider => {
+            const dividerObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    divider.classList.add('active');
+                }
+            }, { threshold: 0.5 });
+            dividerObserver.observe(divider);
+        });
+
+        // Enhanced Nav scroll effect with color transition
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            const navbar = document.getElementById('navbar');
+
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        console.log('Luxury effects loaded.');
     </script>
 </body>
 </html>
