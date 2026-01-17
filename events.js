@@ -21,7 +21,7 @@ window.eventsData = [
     venue: 'Studio Casually Downtown San Diego',
     description: 'Start your weekend with an energizing Pilates flow and Local Market',
     type: 'Community',
-    bookingLink: 'https://www.sweatpals.com/community/etherealbalanceclub'
+    bookingLink: 'https://dashboard.sweatpals.com/events/62b72f1e-59d7-4ba7-9bc0-a39d9d8bd65a?instance=2026-02-07T17%3A45%3A00.000Z'
   }
 ]
 
