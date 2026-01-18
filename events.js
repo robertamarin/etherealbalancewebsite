@@ -38,15 +38,20 @@ window.pastEventsData = [
     ]
   },
   {
-    title: 'Studio Casually',
-    date: 'September 2025 • Community',
-    coverLabel: 'Community Partner',
-    coverImage: 'assets/SC.JPG',
-    photos: [
-      { src: 'assets/SC.JPG', label: 'Studio Session' },
+  title: 'Studio Casually',
+  date: 'September 2025 • Community',
+  coverLabel: 'Community Partner',
+  coverImage: 'assets/SC.JPG',
+  photos: [
+    { src: 'assets/SC.JPG', label: 'Studio Session' },
 
-    ]
-  },
+    {
+      src: 'assets/SDvid.mov',
+      type: 'video',
+      label: 'Event Recap'
+    }
+  ]
+},
   {
     title: 'Lucia',
     date: 'August 2025 • Hotel Partnership',
