@@ -33,6 +33,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         /* Global link reset - prevents default blue color */
@@ -47,6 +48,15 @@
             color: var(--charcoal);
             line-height: 1.7;
             overflow-x: hidden;
+            width: 100%;
+            overscroll-behavior-x: none;
+            touch-action: pan-y;
+        }
+
+        .services-grid,
+        .gallery-track,
+        .lightbox-thumbnails {
+            touch-action: pan-x;
         }
 
         /* Typography */
@@ -3898,8 +3908,29 @@
             `}).join('');
         }
 
+        function isMobileEventsView() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        function bindEventCardToggles() {
+            const cards = document.querySelectorAll('.event-card');
+            cards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    if (!isMobileEventsView()) return;
+                    if (event.target.closest('.event-book-btn')) return;
+
+                    const isExpanded = card.classList.contains('expanded');
+                    cards.forEach(otherCard => otherCard.classList.remove('expanded'));
+                    if (!isExpanded) {
+                        card.classList.add('expanded');
+                    }
+                });
+            });
+        }
+
         // Initialize events on page load
         renderEvents();
+        bindEventCardToggles();
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
