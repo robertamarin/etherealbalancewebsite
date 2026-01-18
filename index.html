@@ -2515,6 +2515,29 @@
             overflow: hidden;
         }
 
+        .lightbox-main-image.is-video {
+            background: transparent;
+            aspect-ratio: 16 / 9;
+        }
+
+        .lightbox-main-image video {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            background: black;
+        }
+
+        .lightbox-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
         .lightbox-nav {
             position: absolute;
             top: 50%;
@@ -2571,6 +2594,19 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+
+        .lightbox-thumb.video::after {
+            content: '▶';
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
         }
 
         .lightbox-thumb:hover {
@@ -4096,6 +4132,24 @@
         let currentEventIndex = 0;
         let currentPhotoIndex = 0;
 
+        function isVideoMedia(media) {
+            return media && media.type === 'video';
+        }
+
+        function getMediaPoster(media) {
+            if (!media) return '';
+            return media.poster || '';
+        }
+
+        function stopActiveVideo() {
+            const mainImage = document.getElementById('lightboxMainImage');
+            const activeVideo = mainImage.querySelector('video');
+            if (activeVideo) {
+                activeVideo.pause();
+                activeVideo.currentTime = 0;
+            }
+        }
+
         function openLightbox(eventIndex) {
             currentEventIndex = eventIndex;
             currentPhotoIndex = 0;
@@ -4107,10 +4161,19 @@
             
             const thumbsContainer = document.getElementById('lightboxThumbnails');
             thumbsContainer.innerHTML = '';
-            event.photos.forEach((photo, i) => {
+            const mediaItems = event.photos || [];
+            mediaItems.forEach((photo, i) => {
                 const thumb = document.createElement('div');
-                thumb.className = 'lightbox-thumb' + (i === 0 ? ' active' : '');
-                thumb.style.backgroundImage = `url('${photo.src}')`;
+                const isVideo = isVideoMedia(photo);
+                thumb.className = 'lightbox-thumb' + (i === 0 ? ' active' : '') + (isVideo ? ' video' : '');
+                const poster = getMediaPoster(photo);
+                if (poster) {
+                    thumb.style.backgroundImage = `url('${poster}')`;
+                } else if (!isVideo) {
+                    thumb.style.backgroundImage = `url('${photo.src}')`;
+                } else {
+                    thumb.textContent = 'Video';
+                }
                 thumb.onclick = () => goToPhoto(i);
                 thumbsContainer.appendChild(thumb);
             });
@@ -4122,6 +4185,7 @@
         }
 
         function closeLightbox() {
+            stopActiveVideo();
             document.getElementById('lightboxOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
@@ -4129,11 +4193,35 @@
         function updateLightboxImage() {
             const event = eventGalleries[currentEventIndex];
             if (!event) return;
-            const photo = event.photos[currentPhotoIndex];
+            const photo = (event.photos || [])[currentPhotoIndex];
+            if (!photo) return;
             
             const mainImage = document.getElementById('lightboxMainImage');
-            mainImage.style.backgroundImage = `url('${photo.src}')`;
-            mainImage.innerHTML = photo.label ? `<span>${photo.label}</span>` : '';
+            stopActiveVideo();
+            mainImage.innerHTML = '';
+
+            if (isVideoMedia(photo)) {
+                mainImage.classList.add('is-video');
+                mainImage.style.backgroundImage = '';
+                const video = document.createElement('video');
+                video.src = photo.src;
+                video.controls = true;
+                video.playsInline = true;
+                video.preload = 'metadata';
+                const poster = getMediaPoster(photo);
+                if (poster) video.poster = poster;
+                mainImage.appendChild(video);
+            } else {
+                mainImage.classList.remove('is-video');
+                mainImage.style.backgroundImage = `url('${photo.src}')`;
+            }
+
+            if (photo.label) {
+                const label = document.createElement('span');
+                label.className = 'lightbox-label';
+                label.textContent = photo.label;
+                mainImage.appendChild(label);
+            }
             
             document.getElementById('lightboxCounter').textContent = 
                 `${currentPhotoIndex + 1} / ${event.photos.length}`;
