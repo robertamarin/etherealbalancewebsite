@@ -43,15 +43,7 @@ window.pastEventsData = [
   coverLabel: 'Community Partner',
   coverImage: 'assets/SC.JPG',
   photos: [
-    { src: 'assets/SC.JPG', label: 'Studio Session' },
-
-    {
-      src: 'assets/SCvid.mp4',
-      type: 'video',
-      label: 'Event Recap'
-    },
-
-    { src: 'assets/IMG_1748.JPG', label: 'Studio Casually' },
+   { src: 'assets/IMG_1748.JPG', label: 'Studio Casually' },
     { src: 'assets/IMG_2066.JPG', label: 'Studio Casually' },
     { src: 'assets/IMG_2067.JPG', label: 'Studio Casually' },
     { src: 'assets/IMG_2216.JPG', label: 'Studio Casually' },
@@ -64,6 +56,11 @@ window.pastEventsData = [
     { src: 'assets/IMG_2225.JPG', label: 'Studio Casually' },
     { src: 'assets/IMG_2226.JPG', label: 'Studio Casually' },
     { src: 'assets/IMG_2227.JPG', label: 'Studio Casually' }
+    {
+      src: 'assets/SCvid.mp4',
+      type: 'video',
+      label: 'Event Recap'
+    },
   ]
 },
   {
