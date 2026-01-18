@@ -46,7 +46,7 @@ window.pastEventsData = [
     { src: 'assets/SC.JPG', label: 'Studio Session' },
 
     {
-      src: 'assets/SDvid.mov',
+      src: 'assets/SCvid.mp4',
       type: 'video',
       label: 'Event Recap'
     }
