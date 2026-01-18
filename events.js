@@ -37,7 +37,7 @@ window.pastEventsData = [
       // { src: 'assets/event-recap.mp4', type: 'video', poster: 'assets/event-recap-poster.jpg', label: 'Event Recap' }
     ]
   },
-  {
+{
   title: 'Studio Casually',
   date: 'September 2025 • Community',
   coverLabel: 'Community Partner',
@@ -49,7 +49,21 @@ window.pastEventsData = [
       src: 'assets/SCvid.mp4',
       type: 'video',
       label: 'Event Recap'
-    }
+    },
+
+    { src: 'assets/IMG_1748.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2066.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2067.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2216.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2217.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2219.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2221.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2222.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2223.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2224.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2225.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2226.JPG', label: 'Studio Casually' },
+    { src: 'assets/IMG_2227.JPG', label: 'Studio Casually' }
   ]
 },
   {
