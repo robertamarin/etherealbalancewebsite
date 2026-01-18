@@ -33,6 +33,8 @@ window.pastEventsData = [
     coverImage: 'assets/Moniker.jpg',
     photos: [
       { src: 'assets/Moniker.jpg', label: 'Cafe Corporate Event' },
+      // Video example:
+      // { src: 'assets/event-recap.mp4', type: 'video', poster: 'assets/event-recap-poster.jpg', label: 'Event Recap' }
     ]
   },
   {
