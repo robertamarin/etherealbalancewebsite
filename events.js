@@ -32,7 +32,7 @@ window.pastEventsData = [
     coverLabel: 'Community Partner',
     coverImage: 'assets/Moniker.jpg',
     photos: [
-      { src: 'assets/Moniker.jpg', label: 'Cafe Corporate Event' },
+      { src: 'assets/Moniker.jpg', label: 'Moniker Coffee Event' },
       { src: 'assets/IMG_2231.JPG', label: 'Moniker Coffee Event' },
       { src: 'assets/IMG_2233.JPG', label: 'Moniker Coffee Event' },
       { src: 'assets/IMG_2236.JPG', label: 'Moniker Coffee Event' },
