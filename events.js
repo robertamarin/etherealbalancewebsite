@@ -22,6 +22,15 @@ window.eventsData = [
     description: 'Start your weekend with an energizing Pilates flow and Local Market',
     type: 'Community',
     bookingLink: 'https://dashboard.sweatpals.com/events/62b72f1e-59d7-4ba7-9bc0-a39d9d8bd65a?instance=2026-02-07T17%3A45%3A00.000Z'
+  },
+  {
+    title: 'Pilates @ SAGO',
+    date: 'Mar 21, 2026',
+    time: '10:00 AM to 12:00 PM',
+    venue: 'SAGO',
+    description: 'Pilates session at SAGO',
+    type: 'Community',
+    bookingLink: 'https://events.sweatpals.com/acda543a'
   }
 ]
 
