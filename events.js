@@ -77,16 +77,27 @@ window.pastEventsData = [
       { src: 'assets/Lucia.JPG', label: 'Poolside Wellness' },
     ]
   },
-  {
-    title: 'Orli Hotel',
-    date: 'June 2025 • Hotel Partnership',
-    coverLabel: 'Hotel Partnership',
-    coverImage: 'assets/ORLI1.jpg',
-    photos: [
-      { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
-      { src: 'assets/Orli.JPEG', label: 'Guest Session' }
-    ]
-  },
+{
+  title: 'Orli Hotel',
+  date: 'June 2025 • Hotel Partnership',
+  coverLabel: 'Hotel Partnership',
+  coverImage: 'assets/ORLI1.jpg',
+  photos: [
+    { src: 'assets/ORLI1.jpg', label: 'Hotel Setting' },
+    { src: 'assets/Orli.JPEG', label: 'Guest Session' },
+
+    { src: 'assets/H29A8949.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A8958.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A8966.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A8993.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9030.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9052.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9072.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9231.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9295.JPG', label: 'Orli Hotel' },
+    { src: 'assets/H29A9302.JPG', label: 'Orli Hotel' }
+  ]
+},
   {
     title: 'Wonderland',
     date: 'June 2025 • Community',
