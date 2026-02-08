@@ -3902,13 +3902,47 @@
             return { month: '', day: '', year: '' };
         }
 
+        function getEventEndDateTime(event) {
+            if (!event || !event.date) return null;
+            const dateParts = event.date.match(/([A-Za-z]+)\s+(\d+)(?:-(\d+))?,?\s+(\d{4})/);
+            if (!dateParts) return null;
+
+            const monthName = dateParts[1];
+            const startDay = parseInt(dateParts[2], 10);
+            const endDay = dateParts[3] ? parseInt(dateParts[3], 10) : startDay;
+            const year = parseInt(dateParts[4], 10);
+            const monthIndex = new Date(`${monthName} 1, ${year}`).getMonth();
+
+            let hours = 23;
+            let minutes = 59;
+            const timeMatches = (event.time || '').match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/gi);
+            if (timeMatches && timeMatches.length > 0) {
+                const lastTime = timeMatches[timeMatches.length - 1];
+                const timeParts = lastTime.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+                if (timeParts) {
+                    hours = parseInt(timeParts[1], 10) % 12;
+                    minutes = parseInt(timeParts[2] || '0', 10);
+                    if (timeParts[3].toUpperCase() === 'PM') {
+                        hours += 12;
+                    }
+                }
+            }
+
+            return new Date(year, monthIndex, endDay, hours, minutes, 0, 0);
+        }
+
         function renderEvents() {
             const eventsList = document.getElementById('eventsList');
             const eventsEmpty = document.getElementById('eventsEmpty');
             const events = window.eventsData || [];
+            const now = new Date();
+            const upcomingEvents = events.filter(event => {
+                const eventEnd = getEventEndDateTime(event);
+                return eventEnd ? eventEnd >= now : true;
+            });
 
             // Show empty state if no events
-            if (events.length === 0) {
+            if (upcomingEvents.length === 0) {
                 eventsList.style.display = 'none';
                 eventsEmpty.style.display = 'block';
                 return;
@@ -3919,7 +3953,7 @@
             eventsList.style.display = 'flex';
 
             // Render each event card
-            eventsList.innerHTML = events.map(event => {
+            eventsList.innerHTML = upcomingEvents.map(event => {
                 const date = parseDate(event.date);
                 return `
                 <div class="event-card">
